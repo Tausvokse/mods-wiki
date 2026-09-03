@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Mod Documentation Hub',
@@ -13,7 +13,8 @@ export default defineConfig({
       { text: 'CobbleTracker', link: '/cobbletracker/' },
       { text: 'Guess The Pokemon', link: '/guessthepokemon/' },
       { text: 'Tourney', link: '/tourney/' },
-      { text: 'Custom Pokedolls', link: '/custompokedolls/' }
+      { text: 'Custom Pokedolls', link: '/custompokedolls/' },
+      { text: 'Battle Pass', link: '/battlepass/' }
     ],
     sidebar: {
       '/unicrates/': [
@@ -96,6 +97,14 @@ export default defineConfig({
             { text: 'Features', link: '/custompokedolls/features' },
             { text: 'Commands', link: '/custompokedolls/commands' },
             { text: 'Configuration', link: '/custompokedolls/configuration' }
+          ]
+        }
+      ],
+      '/battlepass/': [
+        {
+          text: 'Ranked Battle Pass',
+          items: [
+            { text: 'Overview & Mechanics', link: '/battlepass/' }
           ]
         }
       ]
