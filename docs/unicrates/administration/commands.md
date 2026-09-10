@@ -14,6 +14,5 @@
 | \/crate key balance &lt;player&gt; [crate]\ | View virtual key balances | All Players |
 | \/crate info &lt;crate&gt;\ | Print crate details and calculated reward odds | All Players |
 | \/crate preview &lt;crate&gt;\ | Open graphical reward preview GUI | \unicrates.crate.&lt;id&gt;.preview\ |
-| \/crate forceopen &lt;player&gt; &lt;crate&gt;\ | Force-open a crate for player (bypasses limits) | Admin (Level 2) |
 | \/crate massopen &lt;crate&gt;\ | Open multiple keys at once | All Players |
 | \/crate stats &lt;player&gt; [crate]\ | View player's recent open history | Admin (Level 2) |
