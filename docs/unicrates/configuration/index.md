@@ -97,3 +97,35 @@ UniCrates introduces an immersive, hand-only physical roulette mode:
   }
 }
 ```
+
+---
+
+## Cinematic Orbit Camera Splines (`animation.cinematicCamera`)
+
+UniCrates includes a cinematic orbit camera spline system (Idea 12) that delivers esports-grade showcase presentation:
+
+* **Automatic Rarity Trigger**: Automatically engages for **Legendary** or **Mythic** reward drops, or on crates configured with `"cinematicCamera": true`.
+* **Smooth Orbit Curve**: The camera smoothly orbits around the reward focus using an ease-in-out Catmull-Rom spline:
+  $$\theta(t) = \theta_0 + 2\pi \cdot (3t^2 - 2t^3)$$
+* **Combat & Survival Failsafe**: Taking damage from mobs, fire, or hazards immediately aborts the cinematic view and restores normal player perspective. Movement keys (`WASD`, `Jump`, `Sneak`) also allow the player to instantly cancel the camera.
+* **Crate Config Fields**:
+  * `animation.cinematicCamera` (`boolean`, default: `false`): Enables orbit camera for this crate.
+  * `animation.cinematicRadius` (`float`, default: `2.8`): Orbit distance in blocks.
+  * `animation.cinematicHeight` (`float`, default: `1.8`): Camera elevation above the anchor.
+
+---
+
+## Visual In-Game Animation Timeline Studio (`/crate studio`)
+
+Administrators can design, preview, and customize crate animations in real-time directly inside Minecraft without writing JSON manually (Idea 19):
+
+* **Command**: `/crate studio [animation_id]` (requires OP-2 permissions).
+* **Editor Access**: Also accessible via the **"Studio"** button directly inside `/crate edit`.
+* **Features**:
+  * **Duration Slider**: Adjustable animation length (20 to 200 ticks).
+  * **Orbit Geometry Sliders**: Modify orbit radius ($0.5\text{m} \dots 4.0\text{m}$), angular velocity ($1^\circ/\text{tick} \dots 15^\circ/\text{tick}$), and height offset.
+  * **Particle Engine**: Cycle through 34 vanilla particles with density control.
+  * **Sound Selector**: Pick start and victory sound effects with live testing.
+  * **⚡ Live Preview in World**: Spawns client-side preview particles and sounds right in front of the admin.
+  * **Instant Hot-Reload**: Clicking **Save & Apply** compiles the timeline model and reloads `animations/<id>.json` on the server in real-time.
+
