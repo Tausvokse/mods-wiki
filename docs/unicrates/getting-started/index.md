@@ -1,19 +1,50 @@
-# Getting Started
+# Getting Started with UniCrates 2.0
 
-Welcome to UniCrates! This mod brings highly customizable, data-driven crates to Cobblemon, Fabric, and NeoForge.
+Welcome to **UniCrates**! This guide walks you through installing the mod and creating your very first animated in-world crate.
+
+---
+
+## Requirements
+
+- **Minecraft**: `1.21.1`
+- **Mod Loader**: Fabric (`>=0.16.0`) or NeoForge (`>=21.1.65`)
+- **Java**: `Java 21` or higher
+- **Optional Dependencies**:
+  - `Cobblemon` (1.7+ / 1.8+) for Pokémon rewards and 3D Pokédoll displays.
+  - `LuckPerms` for granular permissions management.
+  - An Economy provider (such as Impactor) for virtual balance rewards and purchases.
+
+---
 
 ## Installation
 
-1. Download the latest version of UniCrates for your specific mod loader (Fabric or NeoForge).
-2. Drop the \.jar\ file into your \mods\ folder.
-3. Start your server (or singleplayer world).
+1. Download `unicrates-fabric-2.0.0.jar` or `unicrates-neoforge-2.0.0.jar` depending on your server loader.
+2. Place the JAR file into your server's `mods/` directory (and client `mods/` folder if playing singleplayer or testing visuals).
+3. Start the server. UniCrates will automatically generate default configuration templates under `config/unicrates/`.
 
-## Quick Start
+---
 
-Once the mod is installed and the server is running, follow these steps to create your first crate:
+## Quick Start: Creating Your First Crate
 
-1. Look at a block you want to turn into a crate.
-2. Run the command \/crate create basic_crate\ (this uses the default \asic_crate\ template).
-3. The block is now a crate anchor! You will see a hologram floating above it.
-4. Run \/crate key give &lt;your_name&gt; basic_crate 1\ to give yourself a key.
-5. Right-click the crate with the key to open it!
+### 1. Position & Orientation
+Stand in front of the block you want to designate as your crate (e.g., a decorative pedestal or chest) and face the direction you want the crate model and animations to face:
+
+```bash
+/crate create pokeball_interactive_crate
+```
+*(Or use `basic_crate` for a traditional roulette or `milestone_crate`)*
+
+> [!TIP]
+> **Dynamic Yaw Orientation**: In UniCrates 2.0, the crate automatically captures your exact look angle when executing `/crate create`. The 3D model, opening effects, idle particles, and floating holograms will face precisely towards where you were standing!
+
+### 2. Granting a Key
+To test the opening sequence, give yourself an appropriate key:
+
+```bash
+/crate key give <player> pokeball_interactive_crate 5
+```
+
+### 3. Opening & Previewing
+- **Right-Click with Key**: Initiates the interactive opening sequence.
+- **Right-Click Empty-Handed (or Shift + Right-Click)**: Opens the graphical reward preview GUI showcasing weighted drop rates, rarity tiers, and daily limits.
+- **Mass Open**: Run `/crate massopen <crate_id>` to open multiple keys in bulk and view the results summary.

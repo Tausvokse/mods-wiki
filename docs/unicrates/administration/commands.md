@@ -1,18 +1,27 @@
-# Commands
+# Commands Reference
 
-| Command | Description | Permission Level |
-|---|---|---|
-| \/crate create &lt;name&gt;\ | Create a crate anchor on the targeted block | Admin (Level 2) |
-| \/crate remove\ | Remove the targeted crate anchor cleanly | Admin (Level 2) |
-| \/crate edit [crate]\ | Open in-game GUI editor | Admin (Level 2) |
-| \/crate list\ | List all currently loaded crates | Admin (Level 2) |
-| \/crate reload\ | Hot-reload all configs, crates, animations, and lang | Admin (Level 2) |
-| \/crate give &lt;player&gt; &lt;crate&gt; &lt;amount&gt;\ | Give portable crate item | Admin (Level 2) |
-| \/crate key give &lt;player&gt; &lt;crate&gt; &lt;amount&gt;\ | Give physical or virtual keys | Admin (Level 2) |
-| \/crate key take &lt;player&gt; &lt;crate&gt; &lt;amount&gt;\ | Take keys | Admin (Level 2) |
-| \/crate key set &lt;player&gt; &lt;crate&gt; &lt;amount&gt;\ | Set virtual keys | Admin (Level 2) |
-| \/crate key balance &lt;player&gt; [crate]\ | View virtual key balances | All Players |
-| \/crate info &lt;crate&gt;\ | Print crate details and calculated reward odds | All Players |
-| \/crate preview &lt;crate&gt;\ | Open graphical reward preview GUI | \unicrates.crate.&lt;id&gt;.preview\ |
-| \/crate massopen &lt;crate&gt;\ | Open multiple keys at once | All Players |
-| \/crate stats &lt;player&gt; [crate]\ | View player's recent open history | Admin (Level 2) |
+All UniCrates commands use the root command `/crate` (or alias `/unicrates`).
+
+---
+
+## Command Table
+
+| Command | Description | Default Permission |
+| :--- | :--- | :--- |
+| `/crate create <name>` | Create a crate anchor on the targeted block, aligning orientation to player look angle. | OP Level 2 (`unicrates.admin`) |
+| `/crate remove` | Remove the targeted crate anchor cleanly and despawn holograms/displays. | OP Level 2 (`unicrates.admin`) |
+| `/crate edit [crate]` | Open in-game visual GUI editor with sliders for scale, height, and particles. | OP Level 2 (`unicrates.admin`) |
+| `/crate studio [anim_id]` | Open the **Visual Animation Studio** to design and live-preview opening sequences. | OP Level 2 (`unicrates.admin`) |
+| `/crate bundle <crate> <reward>` | Open the 27-slot visual drag-and-drop item bundle editor for compound drops. | OP Level 2 (`unicrates.admin`) |
+| `/crate list` | List all currently loaded crates, active anchors, and storage status. | OP Level 2 (`unicrates.admin`) |
+| `/crate reload` | Hot-reload all configs, crates, animations, language files, and rebuild resource pack. | OP Level 2 (`unicrates.admin`) |
+| `/crate give <player> <crate> [amount]` | Give portable crate item(s) to a player. | OP Level 2 (`unicrates.admin`) |
+| `/crate key give <player> <crate> [amount]` | Grant physical or virtual keys to a player. | OP Level 2 (`unicrates.admin`) |
+| `/crate key take <player> <crate> [amount]` | Deduct keys from a player's balance or inventory. | OP Level 2 (`unicrates.admin`) |
+| `/crate key set <player> <crate> <amount>` | Set a player's virtual key balance to a specific value. | OP Level 2 (`unicrates.admin`) |
+| `/crate key balance [player] [crate]` | View virtual key balances for yourself or another player. | All Players |
+| `/crate preview <crate>` | Open the graphical reward probability preview GUI. | All Players (`unicrates.crate.<id>.preview`) |
+| `/crate massopen <crate>` | Open the mass-open batch selector (x1, x5, x10, x25, All) and results summary. | All Players |
+| `/crate info <crate>` | Print crate technical details, mathematical odds, and limits to chat. | All Players |
+| `/crate stats [player] [crate]` | View opening statistics, pity counter progress, and daily limits. | All Players / OP Level 2 |
+| `/crate anim <animation_id>` | Test-play an animation timeline at your current looking position. | OP Level 2 (`unicrates.admin`) |
