@@ -54,7 +54,7 @@ enabled: true
 default_webhook_url: "https://discord.com/api/webhooks/123456789/abcdef..."
 min_rarity: "rare"
 include_player_avatar: true
-avatar_url_template: "https://crafatar.com/avatars/{uuid}?overlay"
+avatar_url_template: "https://mc-heads.net/avatar/{player}/100"
 include_cobblemon_stats: true
 
 channels:
