@@ -93,6 +93,27 @@ Makes a display entity orbit around the crate.
 
 ---
 
+## Catalog of Built-in Animations (All Ready-to-Use)
+
+UniCrates ships with **12 production-grade animation sequences** out of the box under `config/unicrates/animations/`:
+
+| Animation ID | Duration | Primary Effects & Particles | Key Sound Effects | Ideal Crate Themes |
+| :--- | :--- | :--- | :--- | :--- |
+| `angelic_ascension` | **160 ticks (8.0s)** | Glowing ascending beam, `minecraft:flash`, holy halo rings (`minecraft:wax_off`), firework finale. | `block.enchantment_table.use`, `ui.toast.challenge_complete` | Angelic, Holy, Celestial, Mythic |
+| `atlantis_abyss` | **155 ticks (7.8s)** | Deep-sea bubble vortex (`minecraft:bubble_pop`), nautilus swirling shells, splashing eruption. | `ambient.underwater.enter`, `block.conduit.activate`, `elder_guardian.ambient` | Atlantis, Oceanic, Water, Sunken |
+| `classic_chest_pop` | **145 ticks (7.2s)** | Crisp chest pop, gentle smoke ring, celebratory totem sparkles and firework poof. | `block.chest.open`, `entity.item.pickup`, `win` | Starter, Classic, Spruce, Wooden |
+| `demonic_hellfire` | **155 ticks (7.8s)** | Nether brimstone smoke, swirling `soul_fire_flame` geysers, dripping lava drops. | `entity.blaze.shoot`, `entity.wither.ambient`, `rareWin` | Demonic, Nether, Magma, Boss |
+| `firework_burst` | **140 ticks (7.0s)** | Ascending rocket trail with flame particles, mid-air detonation with multi-color fireworks. | `open`, `win` | Celebratory, Holiday, Event |
+| `hologram_spin` | **170 ticks (8.5s)** | Cybernetic orbital rings, rotating `end_rod` matrix, flash burst and high-tech hologram scan. | `entity.generic.explode`, `win`, `rareWin` | Cyberpunk, Sci-Fi, Holo, Futuristic |
+| `item_display_carousel` | **150 ticks (7.5s)** | 5-item spinning 3D orbital carousel, totem particles, dynamic decelerating reward selection. | `block.note_block.hat`, `open`, `win` | Carousel, Mystery, Multi-Reward |
+| `light_beam_pillar` | **145 ticks (7.2s)** | Skyward beacon light pillar, ascending particle ladder, radiant celestial flash. | `block.beacon.activate`, `open`, `win` | Lapis, Beam, Sacred, Crystal |
+| `money_jackpot` | **155 ticks (7.8s)** | Gold coin geysers, ringing bell fanfare, experience orb rain, gold sparkle eruption. | `block.bell.use`, `entity.experience_orb.pickup`, `ui.toast` | Economy, Casino, Jackpot, Money |
+| `nature_bloom` | **160 ticks (8.0s)** | Swirling cherry blossom leaves, blooming bone meal sparkles, joyful villager green glints. | `item.bone_meal.use`, `block.enchantment_table.use`, `win` | Botanical, Forest, Nature, Spring |
+| `particle_vortex` | **150 ticks (7.5s)** | Dark matter cosmic vortex (`reverse_portal`), gravitational pull, sonic boom detonation. | `block.respawn_anchor.charge`, `entity.warden.sonic_boom` | Void, Netherite, Legendary, Vortex |
+| `pokemon_master_capture` | **160 ticks (8.0s)** | Ultra-tech capture ray (`minecraft:witch`), 3-shake tension sequence, Master Ball star explosion. | `block.anvil.land`, `ui.toast.challenge_complete`, `rareWin` | Cobblemon, Pokémon, Legendaries |
+
+---
+
 ## Example: Epic Firework Opening
 
 Here is a full JSON example utilizing multiple display actions, sounds, and particles:

@@ -32,14 +32,14 @@ export default defineConfig({
           ]
         },
         {
-          text: 'Custom Content',
+          text: 'Custom Content & Showcase',
           items: [
             { text: 'Overview', link: '/unicrates/custom-content/' },
             { text: 'How to Create a Crate', link: '/unicrates/custom-content/create' },
-            { text: 'Custom Models', link: '/unicrates/custom-content/models' },
+            { text: '3D Crate Models & Rigs', link: '/unicrates/custom-content/models' },
+            { text: 'Built-in Animations & Timelines', link: '/unicrates/custom-content/animations' },
             { text: 'Rewards Guide', link: '/unicrates/custom-content/rewards' },
-            { text: 'Animations', link: '/unicrates/custom-content/animations' },
-            { text: 'JSON Formats', link: '/unicrates/custom-content/json' }
+            { text: 'JSON Formats Reference', link: '/unicrates/custom-content/json' }
           ]
         },
         {
