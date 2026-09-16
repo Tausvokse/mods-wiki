@@ -2,7 +2,7 @@
 
 Welcome to the official documentation for **UniCrates** (Version 2.0.0)!
 
-UniCrates is a production-grade, multi-loader (Fabric & NeoForge) data-driven crate and lootbox engine designed natively for **Minecraft 1.21.1** with first-class **Cobblemon 1.7+** integration.
+UniCrates is a production-grade, multi-loader (Fabric & NeoForge) data-driven crate and lootbox engine designed natively for **Minecraft 1.21.1** with first-class **Cobblemon 1.7 / 1.8+** integration.
 
 ---
 

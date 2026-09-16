@@ -26,7 +26,7 @@ features:
     link: /unicrates/
   - icon: ⚔️
     title: Ranked Battle Pass
-    details: Seasonal dual-track progression engine with Cobblemon 1.7+ battle hooks, cosmetic Pokédoll & Pokéball skins, and 100% EULA-compliant rewards.
+    details: Seasonal dual-track progression engine with Cobblemon 1.7 / 1.8+ battle hooks, cosmetic Pokédoll & Pokéball skins, and 100% EULA-compliant rewards.
     link: /battlepass/
   - icon: 📡
     title: CobbleTracker

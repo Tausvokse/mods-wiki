@@ -10,7 +10,7 @@ Cobblemon Ranked Battle Pass introduces an engaging, seasonal tier-based progres
 
 ### Key Highlights
 - **Dual-Track Progression**: Fully separated **Free** and **Premium** reward tiers.
-- **Cobblemon 1.7+ Native Integration**: Automatically hooks `CobblemonEvents.BATTLE_VICTORY` to grant pass XP based on PvP battle difficulty, ranked tournament matches, and wild boss encounters.
+- **Cobblemon 1.7 / 1.8+ Native Integration**: Automatically hooks `CobblemonEvents.BATTLE_VICTORY` to grant pass XP based on PvP battle difficulty, ranked tournament matches, and wild boss encounters.
 - **Minecraft 1.21.1 Data Components**: Persisted cleanly via `BattlePassData` custom data components and wire-safe `CustomPacketPayload` network synchronizations.
 - **GeckoLib Animated Visuals**: Exclusive cosmetic Pokéball skins, custom Pokédoll statues, particle trails, and victory title displays.
 - **Full Hot-Reload Support**: Tweak rewards, XP curves, and seasonal durations on the fly without server restarts.
