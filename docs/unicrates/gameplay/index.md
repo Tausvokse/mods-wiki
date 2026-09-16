@@ -30,22 +30,7 @@ Admins can grant portable crate items (`/crate give <player> <crate> <amount>`),
 
 ---
 
-## 3. Mass Open (`/crate massopen`)
-
-Players with multiple keys can skip lengthy individual roll animations:
-
-```bash
-/crate massopen <crate_id>
-```
-
-- **Quick Batch Buttons**: Choose to open **x1**, **x5**, **x10**, **x25**, or **OPEN ALL** available keys at once.
-- **Zero-Key Protection**: Prevents entering mass open if the player has 0 keys with clear chat feedback.
-- **Interactive Results Summary**: When the bulk roll completes, the GUI displays a consolidated summary of all rewards won, categorized by rarity with counts (e.g. `x16 Rare Candy`), and a clickable **`[ Done ]`** button.
-- **Instant Inventory Synchronization**: Keys are deducted and won items are deposited directly into the player's inventory (or dropped safely at their feet if full) without container desync.
-
----
-
-## 4. Anti-Interference Shield (Anti-Griefing)
+## 3. Anti-Interference Shield (Anti-Griefing)
 
 To prevent players from clustering around someone actively rolling a crate or trying to grief animations:
 - An active opening activates an **Anti-Interference Shield**.
@@ -55,7 +40,7 @@ To prevent players from clustering around someone actively rolling a crate or tr
 
 ---
 
-## 5. Graphical Reward Odds Preview
+## 4. Graphical Reward Odds Preview
 
 Players can inspect the contents and transparent odds of any crate:
 - **How to Open**: Right-click the crate anchor with an empty hand, or type `/crate preview <crate_id>`.

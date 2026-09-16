@@ -61,4 +61,3 @@ To test the opening sequence, give yourself an appropriate key:
 ### 3. Opening & Previewing
 - **Right-Click with Key**: Initiates the interactive opening sequence.
 - **Right-Click Empty-Handed (or Shift + Right-Click)**: Opens the graphical reward preview GUI showcasing weighted drop rates, rarity tiers, and daily limits.
-- **Mass Open**: Run `/crate massopen <crate_id>` to open multiple keys in bulk and view the results summary.

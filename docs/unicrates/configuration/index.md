@@ -120,17 +120,16 @@ UniCrates includes a cinematic orbit camera spline system (Idea 12) that deliver
 
 ---
 
-## Visual In-Game Animation Timeline Studio (`/crate studio`)
+## Animation Timeline Management (`/crates editor`)
 
-Administrators can design, preview, and customize crate animations in real-time directly inside Minecraft without writing JSON manually (Idea 19):
+Administrators can configure and customize crate animations in the browser via the Web Editor:
 
-* **Command**: `/crate studio [animation_id]` (requires OP-2 permissions).
-* **Editor Access**: Also accessible via the **"Studio"** button directly inside `/crate edit`.
+* **Command**: `/crates editor` (requires OP-2 permissions).
 * **Features**:
-  * **Duration Slider**: Adjustable animation length (20 to 200 ticks).
-  * **Orbit Geometry Sliders**: Modify orbit radius ($0.5\text{m} \dots 4.0\text{m}$), angular velocity ($1^\circ/\text{tick} \dots 15^\circ/\text{tick}$), and height offset.
-  * **Particle Engine**: Cycle through 34 vanilla particles with density control.
-  * **Sound Selector**: Pick start and victory sound effects with live testing.
-  * **⚡ Live Preview in World**: Spawns client-side preview particles and sounds right in front of the admin.
-  * **Instant Hot-Reload**: Clicking **Save & Apply** compiles the timeline model and reloads `animations/<id>.json` on the server in real-time.
+  * **Timeline Selection**: Choose from 47 cinematic pre-built timelines.
+  * **Cooldowns & Duration**: Configure per-crate opening duration and cooldowns.
+  * **Cinematic Orbit Camera**: Enable 360-degree dynamic orbit camera on crate reveal.
+  * **Camera Lock**: Prevent unwanted player movement during opening.
+  * **Instant Cloud Sync**: Save in browser and apply immediately on server with `/crates apply <hash>`.
+
 

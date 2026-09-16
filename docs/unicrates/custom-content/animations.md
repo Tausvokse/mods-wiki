@@ -4,9 +4,9 @@ Welcome to the UniCrates Custom Animations Guide! The data-driven animation time
 
 Animations are defined in `config/unicrates/animations/<id>.json`. You can create self-contained timelines or extend built-in animations.
 
-### Quick Start Commands (In-Game Zero-Code Workflow)
-- **Create new animation**: `/crate anim new <name> [template]` — Clones a working animation template into `config/unicrates/animations/<name>.json` and hot-reloads it immediately.
-- **Test-play in-game**: `/crate anim test <name>` — Look at any placed crate anchor and test your animation in real time without spending keys or granting items!
+### Quick Start Workflow (Web Editor & In-Game)
+- **Visual Web Editor**: `/crates editor` — Open the browser editor (luckperms-style) where you can select, assign, and customize any of the 47 animation timelines with live parameter controls and save them back with `/crates apply <hash>`.
+- **File Hot-Reload**: `/crate reload` — Hot-reloads all timeline files from `config/unicrates/animations/`.
 
 ## Timeline Structure
 

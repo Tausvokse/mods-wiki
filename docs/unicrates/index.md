@@ -15,9 +15,8 @@ UniCrates is a production-grade, multi-loader (Fabric & NeoForge) data-driven cr
 - **Universal Floating Item Animation (New in 2.0)**: Won prize items across all crate models rotate smoothly around their vertical Y-axis with natural physics bobbing.
 - **Anti-Interference Player Shield (New in 2.0)**: Outside players trying to steal or interrupt active crate openings are gently pushed back by a localized velocity shield with status warnings.
 - **Interactive 3D Poké Ball Selection**: Physical in-world 3D roulette where players interact directly with floating Poké Balls featuring GPU scale interpolation, main-hand security, and disconnect failsafes.
-- **Dedicated Mass Open & Summary**: Bulk-open up to 25+ keys simultaneously with instant container sync and a comprehensive won-rewards results interface.
 - **Cinematic Orbit Camera Splines**: Cinematic Catmull-Rom orbit camera curves for Legendary and Mythic reward drops with instant combat-damage safety abort.
-- **In-Game Visual Studio (`/crate studio`) & GUI Editor**: Edit crates, test particles, adjust orbit geometry, and hot-reload in real-time without touching JSON files.
+- **LuckPerms-Style Web Editor (`/crates editor`) & GUI Editor**: Create and edit crates, configure rewards, customize 47 animation timelines, and sync in real-time with one command.
 - **Asynchronous Discord Webhooks**: Rich Discord victory embeds with 3D player skin avatars and Cobblemon IV/EV/Shiny stats.
 - **Triple Storage Backend**: Support for `flatfile`, `sqlite`, and `mysql`/`mariadb` with automated one-shot live data migration.
 
