@@ -8,6 +8,9 @@ All UniCrates commands use the root command `/crate` (or alias `/unicrates`).
 
 | Command | Description | Default Permission |
 | :--- | :--- | :--- |
+| `/crates editor` | Generate a temporary web editor session link (LuckPerms style) to visually configure crates in browser. | OP Level 2 (`unicrates.admin`) |
+| `/crates apply <hash>` | Download and safely apply modified crate configurations from the web editor. | OP Level 2 (`unicrates.admin`) |
+| `/crate new <name> [template]` | Create a brand-new crate from a template and instantly open the in-game GUI editor. | OP Level 2 (`unicrates.admin`) |
 | `/crate create <name>` | Create a crate anchor on the targeted block, aligning orientation to player look angle. | OP Level 2 (`unicrates.admin`) |
 | `/crate remove` | Remove the targeted crate anchor cleanly and despawn holograms/displays. | OP Level 2 (`unicrates.admin`) |
 | `/crate edit [crate]` | Open in-game visual GUI editor with sliders for scale, height, and particles. | OP Level 2 (`unicrates.admin`) |
@@ -24,4 +27,5 @@ All UniCrates commands use the root command `/crate` (or alias `/unicrates`).
 | `/crate massopen <crate>` | Open the mass-open batch selector (x1, x5, x10, x25, All) and results summary. | All Players |
 | `/crate info <crate>` | Print crate technical details, mathematical odds, and limits to chat. | All Players |
 | `/crate stats [player] [crate]` | View opening statistics, pity counter progress, and daily limits. | All Players / OP Level 2 |
-| `/crate anim <animation_id>` | Test-play an animation timeline at your current looking position. | OP Level 2 (`unicrates.admin`) |
+| `/crate anim test <animation_id>` | Test-play an animation on the targeted crate anchor without spending keys. | OP Level 2 (`unicrates.admin`) |
+| `/crate anim new <name> [template]` | Clone an animation template and create a new custom timeline file. | OP Level 2 (`unicrates.admin`) |

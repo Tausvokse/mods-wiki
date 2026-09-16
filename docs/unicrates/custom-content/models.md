@@ -226,18 +226,44 @@ Each crate has a corresponding 3D key model rendered with `custom_model_data` an
 ---
 
 ### Adding Your Own Custom Models
-To use your own models:
-1. Place your Blockbench JSON model inside your server's resource pack under `assets/<namespace>/models/item/<model_name>.json`.
-2. Reference your item in the crate's appearance config:
-   ```json
-   "appearance": {
-     "displayMode": "item_display",
-     "customItemModel": "mymod:crate_special",
-     "scale": 1.0,
-     "glowEffect": true
-   }
-   ```
-3. Run `/crate reload` to instantly rebuild the dynamic server resource pack and update in-world displays.
+You can add your own models using **three non-programming pathways**:
+
+#### 1. CustomModelData (ItemsAdder, Oraxen & Custom Resource Packs)
+If your server uses custom item models via `CustomModelData`:
+```json
+"appearance": {
+  "displayMode": "item_display",
+  "customItemModel": "minecraft:paper",
+  "customModelData": 10005,
+  "scale": 1.2,
+  "idleYOffset": 0.1,
+  "glowEffect": true
+}
+```
+UniCrates automatically attaches the `custom_model_data` component to the spawned `ItemDisplay` entity.
+
+#### 2. Direct Resource Pack Item Models
+Place your Blockbench JSON model inside your server's resource pack under `assets/<namespace>/models/item/<model_name>.json`:
+```json
+"appearance": {
+  "displayMode": "item_display",
+  "customItemModel": "mymod:crate_special",
+  "scale": 1.0,
+  "glowEffect": true
+}
+```
+
+#### 3. Vanilla Block/Item Canvas
+Use any vanilla item or block as a floating canvas:
+```json
+"appearance": {
+  "displayMode": "item_display",
+  "customItemModel": "minecraft:beacon",
+  "scale": 1.0
+}
+```
+
+Run `/crate reload` to instantly rebuild the dynamic server resource pack and update in-world displays.
 
 <style>
 .crates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }

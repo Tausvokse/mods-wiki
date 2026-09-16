@@ -2,7 +2,11 @@
 
 Welcome to the UniCrates Custom Animations Guide! The data-driven animation timeline system allows you to create custom, spectacular crate opening sequences completely through JSON.
 
-Animations are defined in `config/unicrates/animations/&lt;id&gt;.json`. You can create self-contained timelines or extend built-in animations.
+Animations are defined in `config/unicrates/animations/<id>.json`. You can create self-contained timelines or extend built-in animations.
+
+### Quick Start Commands (In-Game Zero-Code Workflow)
+- **Create new animation**: `/crate anim new <name> [template]` — Clones a working animation template into `config/unicrates/animations/<name>.json` and hot-reloads it immediately.
+- **Test-play in-game**: `/crate anim test <name>` — Look at any placed crate anchor and test your animation in real time without spending keys or granting items!
 
 ## Timeline Structure
 

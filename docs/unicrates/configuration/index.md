@@ -30,6 +30,11 @@ Controls global plugin/mod settings.
 * pitySystem.guaranteedMinimumRarity (String, default: "rare")
 * pitySystem.guaranteedAfterOpens (int, default: 50)
 
+### Web Editor
+* webEditor.enabled (boolean, default: true): Enables `/crates editor` and `/crates apply <hash>`.
+* webEditor.editorUrl (String, default: "https://unicrates.net/editor/"): Web UI client location.
+* webEditor.relayUrl (String, default: "https://unicrates-relay.workers.dev/"): Cloudflare Worker + KV payload relay service URL.
+
 ## Discord Webhook Integration (`config/unicrates/discord.yml`)
 
 UniCrates supports high-performance, asynchronous Discord announcements with rich embeds. The configuration is stored in a dedicated `config/unicrates/discord.yml` file.
