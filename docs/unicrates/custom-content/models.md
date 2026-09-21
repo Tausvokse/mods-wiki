@@ -263,6 +263,35 @@ Use any vanilla item or block as a floating canvas:
 }
 ```
 
+### 4. Zero-Code Custom Textures & One-Click Pack Export
+
+UniCrates allows server owners and builders to add custom crate textures without any code or manual resource-pack zipping:
+
+1. **Drop Textures**: Place your PNG files in `config/unicrates/resources/<crate_id>/`:
+   - `block.png` — In-world crate texture
+   - `key.png` — Physical key texture
+   - `icon.png` — GUI roulette and preview icon
+2. **Export Pack**: Run the built-in compiler command in-game:
+   ```bash
+   /crate exportpack
+   ```
+   UniCrates automatically generates `pack.mcmeta`, registers item models, and bundles everything into `.minecraft/resourcepacks/UniCrates-ResourcePack.zip`.
+3. Press `F3 + T` to reload your client textures.
+
+### 5. In-Game Hand Reward Addition
+
+Skip writing complex JSON strings and item IDs manually. Add any held item directly:
+```bash
+/crate reward add <crate> hand [weight] [rarity]
+# Quick alias:
+/crate addhand <crate> [weight] [rarity]
+```
+UniCrates captures the exact item in your hand, including:
+- Custom Names, Lore, and MiniMessage styling
+- Enchantments and Data Components
+- Custom Model Data
+- Cobblemon Pokémon species, forms, and shiny variants
+
 Run `/crate reload` to instantly rebuild the dynamic server resource pack and update in-world displays.
 
 <style>
