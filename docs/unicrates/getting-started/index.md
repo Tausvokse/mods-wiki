@@ -32,7 +32,7 @@ Welcome to **UniCrates**! This guide walks you through installing the mod and cr
 
 ## Installation
 
-1. Download `unicrates-fabric-2.0.0.jar` or `unicrates-neoforge-2.0.0.jar` depending on your server loader.
+1. Download `unicrates-fabric-2.1.0-beta.jar` or `unicrates-neoforge-2.1.0-beta.jar` depending on your server loader.
 2. Place the JAR file into your server's `mods/` directory (and client `mods/` folder if playing singleplayer or testing visuals).
 3. Start the server. UniCrates will automatically generate default configuration templates under `config/unicrates/`.
 
