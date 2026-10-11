@@ -7,10 +7,7 @@ File: `config/unicrates/main-config.json`. First start writes the defaults from 
 | Field | Default | Effective behavior in 2.3 |
 | --- | --- | --- |
 | `configVersion` | `1` | Format metadata; not the mod version |
-| `general.debugMode` | `true` | Debug configuration flag |
 | `general.autoGenerateResourcePack` | `true` | Assemble `generated-resourcepack/` on reload |
-| `general.requireClientMod` | `true` | Stored setting; no runtime read enforcing client installation was found |
-| `general.checkForUpdates` | `true` | Stored setting; no update-check consumer was found |
 | `integrations.luckperms.enabled` | `true` | Consult LuckPerms when installed and available |
 | `integrations.luckperms.fallbackToOpIfMissing` | `true` | OP level 2 fallback when LuckPerms is unavailable; see [permissions](../administration/permissions) for the separate admin fallback |
 | `integrations.cobblemon.enabled` | `true` | Controls version-warning check; reward availability checks the installed mod |
@@ -36,27 +33,20 @@ Economy operations require a registered `EconomyProvider`. The bundled adapter t
 | --- | --- | --- |
 | `animations.defaultAnimation` | `"particle_vortex"` | Global animation selection |
 | `animations.allowPerCrateOverride` | `true` | Let crate animation configuration override global selection |
-| `animations.broadcastAnimationToNearbyPlayers` | `true` | Nearby animation broadcast setting |
-| `animations.animationRadiusBlocks` | `12` | Broadcast radius in blocks |
 | `animations.maxConcurrentAnimationsPerServer` | `40` | Animation manager admission limit |
 | `animations.companionMode` | `"AUTO_FALLBACK"` | Pokémon scene policy: `AUTO_FALLBACK`, `REQUIRE_COMPANION`, `FORCE_VANILLA` |
-| `animations.enablePokemonCinematics` | `true` | Enable Pokémon cinematic path |
 
 Read [animations](../custom-content/animations) before choosing a companion policy. Availability depends on handshake capabilities and the selected opening.
 
-## Block and cooldown fields
+## Legacy fields and opening cooldowns
 
-These fields exist in `MainConfig` but have no runtime reads in the current source. Changing them does not configure mining, drops or opening cooldowns.
+Newly generated configurations contain supported settings only. Older files still load, but the following legacy placeholders are ignored and excluded when a `MainConfig` object is serialized. Existing files are not automatically rewritten, so you may remove these entries manually:
 
-| Field | Stored default |
-| --- | --- |
-| `blocks.crateHardness` | `3.0` |
-| `blocks.crateBlastResistance` | `6.0` |
-| `blocks.crateLightLevel` | `0` |
-| `blocks.requireSilkTouchToBreak` | `true` |
-| `blocks.dropsCrateItemOnBreak` | `true` |
-| `cooldowns.defaultOpenCooldownSeconds` | `2` |
-| `cooldowns.perCrateCooldownOverrideAllowed` | `true` |
+- `general.debugMode`, `general.requireClientMod`, `general.checkForUpdates`
+- `animations.broadcastAnimationToNearbyPlayers`, `animations.animationRadiusBlocks`, `animations.enablePokemonCinematics`
+- The entire `blocks` and `cooldowns` sections
+
+These entries never controlled client installation checks, updates, entity visibility, mining, drops or cooldowns. Removing them does not change those behaviors. Nearby display visibility follows Minecraft entity tracking; Pokémon scene behavior uses `animations.companionMode` and the selected crate animation.
 
 The active cooldown comes from each crate's `opening.cooldownSeconds`, whose omitted-field default is **0 seconds**. Set it explicitly for crates that need a cooldown.
 

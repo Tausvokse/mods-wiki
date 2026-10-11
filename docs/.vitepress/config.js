@@ -26,6 +26,7 @@ export default defineConfig({
           { text: 'Overview', link: '/unicrates/' },
           { text: 'Release Notes', link: '/unicrates/release-notes' },
           { text: 'Installation & First Crate', link: '/unicrates/getting-started/' },
+          { text: 'Upgrade an Existing Server', link: '/unicrates/getting-started/upgrading' },
           { text: 'Troubleshooting', link: '/unicrates/getting-started/troubleshooting' },
           { text: 'Player Gameplay', link: '/unicrates/gameplay/' },
           { text: 'Keys & Reward Delivery', link: '/unicrates/gameplay/keys-and-rewards' }
