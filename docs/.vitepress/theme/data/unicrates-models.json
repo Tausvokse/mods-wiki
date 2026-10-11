@@ -1,0 +1,250 @@
+[
+  {
+    "id": "sculk_warden",
+    "name": "Sculk Warden",
+    "image": "/UniCrates/models/sculk_warden-in-game.webp",
+    "keyCustomModelData": 1,
+    "previewOpening": "sculk_warden_timeline",
+    "imageSha256": "67F83E375D199F27FDCCD82B9D9C4AF957E7D9D1D6DC44FB1AB2EB2B28861F7C"
+  },
+  {
+    "id": "frostmourne_glacial",
+    "name": "Frostmourne Glacial",
+    "image": "/UniCrates/models/frostmourne_glacial-in-game.webp",
+    "keyCustomModelData": 2,
+    "previewOpening": "frostmourne_glacial_timeline",
+    "imageSha256": "A75BAB1E4275FCE484D5FDE69376B7B7A64CCB6377D535B9E17758D1F2842828"
+  },
+  {
+    "id": "solar_flare",
+    "name": "Solar Flare",
+    "image": "/UniCrates/models/solar_flare-in-game.webp",
+    "keyCustomModelData": 3,
+    "previewOpening": "solar_flare_timeline",
+    "imageSha256": "12A318C543226D324CAE672C67794EE121927882BEA77A61641EB4A70F74950E"
+  },
+  {
+    "id": "amethyst_geode",
+    "name": "Amethyst Geode",
+    "image": "/UniCrates/models/amethyst_geode-in-game.webp",
+    "keyCustomModelData": 4,
+    "previewOpening": "amethyst_geode_timeline",
+    "imageSha256": "C43BB0CAB0E3704148D37F71E44D094D60978786B7342D346DC5E42390D97EA0"
+  },
+  {
+    "id": "abyssal_prismarine",
+    "name": "Abyssal Prismarine",
+    "image": "/UniCrates/models/abyssal_prismarine-in-game.webp",
+    "keyCustomModelData": 5,
+    "previewOpening": "abyssal_prismarine_timeline",
+    "imageSha256": "E89215B51E7F19CC14DAA648BB416D499B76278BB0367E34FBF566E7244A8EB7"
+  },
+  {
+    "id": "vampiric_blood",
+    "name": "Vampiric Blood",
+    "image": "/UniCrates/models/vampiric_blood-in-game.webp",
+    "keyCustomModelData": 6,
+    "previewOpening": "vampiric_blood_timeline",
+    "imageSha256": "74C662B6D7B6B63D23E6F128A71E80D8C9FC183C14FC010673B9A283E5F09460"
+  },
+  {
+    "id": "ender_voidborn",
+    "name": "Ender Voidborn",
+    "image": "/UniCrates/models/ender_voidborn-in-game.webp",
+    "keyCustomModelData": 7,
+    "previewOpening": "ender_voidborn_timeline",
+    "imageSha256": "20E32E3AA35728AE67473E82F44D9BCF8DFDEFB39943788EA4909229343CE519"
+  },
+  {
+    "id": "witchcraft_cauldron",
+    "name": "Witchcraft Cauldron",
+    "image": "/UniCrates/models/witchcraft_cauldron-in-game.webp",
+    "keyCustomModelData": 8,
+    "previewOpening": "witchcraft_cauldron_timeline",
+    "imageSha256": "B6166C229DAFBAFECE244A89BCA9F99718A5DA13B1C96DCBC62730C44D7DB4D7"
+  },
+  {
+    "id": "aztec_jaguar",
+    "name": "Aztec Jaguar",
+    "image": "/UniCrates/models/aztec_jaguar-in-game.webp",
+    "keyCustomModelData": 9,
+    "previewOpening": "aztec_jaguar_timeline",
+    "imageSha256": "CDBC9EB3B0A414698BE87BB52E80ED2DFD1C3D87E5E89C2F203E51B758E16AC8"
+  },
+  {
+    "id": "pharaoh_tomb",
+    "name": "Pharaoh Tomb",
+    "image": "/UniCrates/models/pharaoh_tomb-in-game.webp",
+    "keyCustomModelData": 10,
+    "previewOpening": "pharaoh_tomb_timeline",
+    "imageSha256": "2C526901BB19125AF263838A09082502A05106E947C0C607A6492F17F4446B10"
+  },
+  {
+    "id": "celestial_astral",
+    "name": "Celestial Astral",
+    "image": "/UniCrates/models/celestial_astral-in-game.webp",
+    "keyCustomModelData": 11,
+    "previewOpening": "celestial_astral_timeline",
+    "imageSha256": "A5130AA0065616FB533ED3F84C009E08CD4CE1AB8AEED7D018D2576A03BF0785"
+  },
+  {
+    "id": "steampunk_chronos",
+    "name": "Steampunk Chronos",
+    "image": "/UniCrates/models/steampunk_chronos-in-game.webp",
+    "keyCustomModelData": 12,
+    "previewOpening": "steampunk_chronos_timeline",
+    "imageSha256": "9C99634AE913B23A70862C4AB344BEB43DE6A76F70C1EE362E459A00AF7A2D1D"
+  },
+  {
+    "id": "radioactive_biohazard",
+    "name": "Radioactive Biohazard",
+    "image": "/UniCrates/models/radioactive_biohazard-in-game.webp",
+    "keyCustomModelData": 13,
+    "previewOpening": "radioactive_biohazard_timeline",
+    "imageSha256": "C85D4CE6576F7B73171A357536D5BBF128E249D91B243A3329B88AB39F1EDF26"
+  },
+  {
+    "id": "tactical_airdrop",
+    "name": "Tactical Airdrop",
+    "image": "/UniCrates/models/tactical_airdrop-in-game.webp",
+    "keyCustomModelData": 14,
+    "previewOpening": "tactical_airdrop_timeline",
+    "imageSha256": "837D6DD7CB6C1436AFC5DC44939FEDB3119BEBF5E6A48956172BC6B4F48D09AE"
+  },
+  {
+    "id": "mecha_dragon",
+    "name": "Mecha Dragon",
+    "image": "/UniCrates/models/mecha_dragon-in-game.webp",
+    "keyCustomModelData": 15,
+    "previewOpening": "mecha_dragon_timeline",
+    "imageSha256": "324E709C3F38E70155781D2AD5766F01F25C2F9CEA159746CBB0A1FF4813FB13"
+  },
+  {
+    "id": "samurai_shinto",
+    "name": "Samurai Shinto",
+    "image": "/UniCrates/models/samurai_shinto-in-game.webp",
+    "keyCustomModelData": 16,
+    "previewOpening": "samurai_shinto_timeline",
+    "imageSha256": "2235120B6D131D2D3CEF003F6311BEA33FC02540ACD00A7BF7612FB318CDE75A"
+  },
+  {
+    "id": "kraken_galleon",
+    "name": "Kraken Galleon",
+    "image": "/UniCrates/models/kraken_galleon-in-game.webp",
+    "keyCustomModelData": 17,
+    "previewOpening": "kraken_galleon_timeline",
+    "imageSha256": "936A9EBC6C2BA85298DF11454EF15D4623469B3BAE53B6D5FFF20C8DB4CAD01D"
+  },
+  {
+    "id": "retro_arcade",
+    "name": "Retro Arcade",
+    "image": "/UniCrates/models/retro_arcade-in-game.webp",
+    "keyCustomModelData": 18,
+    "previewOpening": "retro_arcade_timeline",
+    "imageSha256": "A06D893E6D00FD86E33324C9559898F1301A6461B9FDF4BF8196F25C3791CBCB"
+  },
+  {
+    "id": "prismatic_fairy",
+    "name": "Prismatic Fairy",
+    "image": "/UniCrates/models/prismatic_fairy-in-game.webp",
+    "keyCustomModelData": 19,
+    "previewOpening": "prismatic_fairy_timeline",
+    "imageSha256": "0CDBAF197774D5DE135D187817ADC5EB7F6CE2EAD779C8D43E84A1C0F25AA5AA"
+  },
+  {
+    "id": "wyrm_hoard",
+    "name": "Wyrm Hoard",
+    "image": "/UniCrates/models/wyrm_hoard-in-game.webp",
+    "keyCustomModelData": 20,
+    "previewOpening": "wyrm_hoard_timeline",
+    "imageSha256": "931F6EBB5284DABA42467FF1C830777257B884D60121B5545BBE73692E014424"
+  },
+  {
+    "id": "angelic",
+    "name": "Angelic",
+    "image": "/UniCrates/models/angelic-in-game.webp",
+    "keyCustomModelData": 21,
+    "previewOpening": "angelic_ascension",
+    "imageSha256": "81254CE35052B2A8E29992CE861DC28A011FF4142A1CE50C30F98957C93EC4F6"
+  },
+  {
+    "id": "atlantis",
+    "name": "Atlantis",
+    "image": "/UniCrates/models/atlantis-in-game.webp",
+    "keyCustomModelData": 22,
+    "previewOpening": "atlantis_abyss",
+    "imageSha256": "C2A0E89D7240010958BAE0229711D209BA0A4B65D29F7ED9F07A0C1D016DA948"
+  },
+  {
+    "id": "demonic",
+    "name": "Demonic",
+    "image": "/UniCrates/models/demonic-in-game.webp",
+    "keyCustomModelData": 23,
+    "previewOpening": "demonic_hellfire",
+    "imageSha256": "93AB8C4D1990B2127A16D3229C9DCA22B9E2B50D41CD692837829E5A38F5E9F0"
+  },
+  {
+    "id": "money",
+    "name": "Money",
+    "image": "/UniCrates/models/money-in-game.webp",
+    "keyCustomModelData": 24,
+    "previewOpening": "demonic_timeline",
+    "imageSha256": "6489499E739A4A599F4FCEEAE69CA886220B0E3EAE6457E3356297F5AB0B4544"
+  },
+  {
+    "id": "nature",
+    "name": "Nature",
+    "image": "/UniCrates/models/nature-in-game.webp",
+    "keyCustomModelData": 25,
+    "previewOpening": "nature_bloom",
+    "imageSha256": "B5B5A892EF810803C70D70C146D282B4D9CFC6080E7EB41B25F628A5FED7814B"
+  },
+  {
+    "id": "pokemon",
+    "name": "Pokemon",
+    "image": "/UniCrates/models/pokemon-in-game.webp",
+    "keyCustomModelData": 26,
+    "previewOpening": "interactive_pokeball",
+    "imageSha256": "01A2A02DFE6594508D1E1FC975B0B1494614CB19F180E740C7A0240E4B7ABF79"
+  },
+  {
+    "id": "common",
+    "name": "Common",
+    "image": "/UniCrates/models/common-in-game.webp",
+    "keyCustomModelData": 27,
+    "previewOpening": "common_wooden_timeline",
+    "imageSha256": "CA96877837167A8E6D236024AF72B6BF3CE0C2ABF00B61FBE4BAE87C196961FF"
+  },
+  {
+    "id": "rare",
+    "name": "Rare",
+    "image": "/UniCrates/models/rare-in-game.webp",
+    "keyCustomModelData": 28,
+    "previewOpening": "rare_timeline",
+    "imageSha256": "4A24305F5BA9D069ED57B5E6D9F127C18AF10B67C5DDA993FB4E3392F874008C"
+  },
+  {
+    "id": "epic",
+    "name": "Epic",
+    "image": "/UniCrates/models/epic-in-game.webp",
+    "keyCustomModelData": 29,
+    "previewOpening": "epic_obsidian_timeline",
+    "imageSha256": "7E59702F6B51B0B87386913307EC05800AB0C6D440354D75E639F7884326A87B"
+  },
+  {
+    "id": "legendary",
+    "name": "Legendary",
+    "image": "/UniCrates/models/legendary-in-game.webp",
+    "keyCustomModelData": 30,
+    "previewOpening": "hologram_spin",
+    "imageSha256": "F08483D8CAFC6ED644C41406AF81D016179E91C4FF000D1C1F6435D20B51C93C"
+  },
+  {
+    "id": "astral_pokeball",
+    "name": "Master Ball",
+    "image": "/UniCrates/models/astral_pokeball-in-game.webp",
+    "keyCustomModelData": 31,
+    "previewOpening": "astral_reveal",
+    "imageSha256": "065BED3C68EDC297864107116C01AA6D0D4305AED20319A192BB462412807FCC"
+  }
+]

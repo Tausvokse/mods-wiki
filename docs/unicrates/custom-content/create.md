@@ -1,271 +1,176 @@
-# How to Create a Crate
-
-Welcome to the comprehensive guide on creating a new crate in **UniCrates**! This tutorial will walk you through the process of writing a `crates/&lt;name&gt;.json` configuration file, explaining every aspect of its structure.
-
-By the end of this guide, you will understand how to:
-- Set up the base crate structure.
-- Customize its appearance and holograms.
-- Configure its key (physical or virtual).
-- Define how it opens.
-- Add varied and weighted rewards (including Pokémon!).
-
-> [!NOTE]
-> All crate configuration files must be placed in `config/unicrates/crates/` and have a `.json` extension.
-
+---
+title: Create a Crate
+description: A guided workflow from a bundled crate to custom models, keys, and a tested opening.
 ---
 
-## 1. Base Structure
+# Create a Crate
 
-Every crate needs a unique identifier and basic metadata.
+Create `festival_crate` with a matching physical key, two item prizes, a bundled opening, and a hologram. Then replace the visuals with your own model if you want a unique design. Use lowercase IDs with letters, digits, underscores, or hyphens; these also meet the model upload and pack assembler rules.
+
+## Route A: use the web editor
+
+1. Run `/crates editor` as an administrator and open the link generated in chat.
+2. Select **Create New Crate** and start with the Starter template.
+3. In **General & Key**, set ID `festival_crate`, name `&6&lFestival Crate`, `PHYSICAL` key mode, and key name `&eFestival Key`. Review `key.id` in **Raw JSON**: key identity is separate from the rendered item or model.
+4. In **3D Appearance**, select **Common** and scale `1.0`. Keep `appearance.idleYOffset` at `0.0` in Raw JSON. This selects the bundled crate and key theme.
+5. In **Opening Timeline**, select `common_wooden_timeline`.
+6. In **Rewards & Odds**, add four iron ingots with weight `80` and one diamond with weight `20`. Give each entry a unique reward ID.
+7. In **Hologram**, use `%crate%` and `&7Key: %key%`. Adjust text height independently of the model and particles.
+8. Click **Apply Changes**, then **Save to Server**. Run the new `/crates apply <hash>` command shown by the editor.
+9. Place and test the crate using the commands below.
+
+**Apply Changes** commits the form to the browser workspace. It does not write server files. [Web editor](./web-editor) explains the save/apply stages, cancellation, expiry, and concurrent edits.
+
+## Route B: write the JSON file
+
+Save this complete example as `config/unicrates/crates/festival_crate.json`. The filename and `id` must match.
 
 ```json
 {
   "configVersion": 1,
-  "id": "my_epic_crate",
-  "displayName": "&5&lEpic Crate",
-  "lore": [
-    "&7Contains epic loot!",
-    "&7Open with an Epic Key."
-  ]
-}
-```
-
-- **`configVersion`**: Keep this as `1` for now.
-- **`id`**: Must be unique, lower-case, and use underscores instead of spaces.
-- **`displayName`**: The name of the crate, supporting formatting codes (`&`).
-- **`lore`**: A list of strings displayed when previewing the crate in GUIs.
-
----
-
-## 2. Appearance
-
-The `appearance` block controls what the crate looks like in the world.
-
-```json
+  "id": "festival_crate",
+  "displayName": "&6&lFestival Crate",
+  "lore": ["&7A celebration with useful prizes."],
   "appearance": {
     "displayMode": "item_display",
-    "vanillaBlockFallback": "minecraft:chest",
-    "glowEffect": true,
+    "builtinModel": "common",
+    "scale": 1.0,
+    "idleYOffset": 0.0,
     "floatingRotation": false,
-    "scale": 1.2,
-    "builtinModel": "epic",
-    "guiTheme": "dark",
-    "hologram": {
-      "enabled": true,
-      "heightOffset": 1.8,
-      "lines": [
-        "&5&l[%crate%&5&l]",
-        "&7(&dRight-click &fto open&7)"
-      ]
-    }
-  }
-```
-
-### Key Appearance Fields:
-- **`displayMode`**: Usually `"item_display"`.
-- **`builtinModel`**: One of the mod's bundled 3D rigs: `"common"`, `"rare"`, `"epic"`, `"legendary"`. Leave blank if you use `customItemModel` for your own resource pack model.
-- **`scale`**: Multiplier for the 3D model size.
-- **`glowEffect`**: Set to `true` to make the model emit light/glow.
-- **`hologram`**: Floating text above the crate block. You can use placeholders like `%crate%` and `%key%`.
-
----
-
-## 3. Configuring the Key
-
-The `key` section determines what is required to open the crate.
-
-```json
-  "key": {
-    "id": "epic_key",
-    "displayName": "&5Epic Key",
-    "consumeOnOpen": true,
-    "virtualKey": false,
-    "acceptedKeyIds": ["epic_key", "master_key"],
-    "keyModel": "epic"
-  }
-```
-
-- **`virtualKey`**: If `true`, the key is tracked virtually per player. If `false`, it's a physical item.
-- **`consumeOnOpen`**: Set to `true` to take the key from the player upon opening.
-- **`acceptedKeyIds`**: A list of valid key IDs that can open this crate.
-- **`keyModel`**: Uses one of the bundled key rig models (e.g., `"epic"`).
-
----
-
-## 4. Opening Mechanism
-
-The `opening` block determines how players interact with the crate and what animation plays.
-
-```json
-  "opening": {
-    "trigger": "right_click",
-    "openingType": "roulette",
-    "cooldownSeconds": 5,
-    "requireEmptyHandOrKeyOnly": false,
-    "bulkOpenAllowed": true,
-    "bulkOpenOptions": [1, 5, 10, "all"]
-  }
-```
-
-### Opening Types (`openingType`)
-UniCrates supports several UI and animation types:
-- **`roulette`**: A CS:GO style scrolling GUI.
-- **`strip`**: A linear scrolling animation.
-- **`reels`**: A slot-machine style animation.
-- **`wheel`**: A spinning wheel.
-- **`selectable`**: Allows the player to pick from hidden options.
-- **`instant`**: No UI, grants rewards immediately.
-- **`world_animation`**: Plays a physical world animation instead of a GUI.
-
-> [!TIP]
-> If you enable `bulkOpenAllowed`, you can define options in `bulkOpenOptions` like `[1, 5, 10, "all"]` to allow players to open multiple crates at once!
-
----
-
-## 5. Adding Rewards
-
-Rewards are configured in the `rewards` array. Each reward has a **`weight`** which determines its chance to be picked relative to other rewards. 
-
-### Common Fields:
-- **`id`**: A unique ID for the reward.
-- **`type`**: The kind of reward (`item`, `command`, `cobblemon_pokemon`, etc.).
-- **`weight`**: Higher numbers mean a higher chance to win. (e.g., `100` is much more common than `1`).
-- **`rarity`**: Usually matches your theme (`common`, `rare`, `epic`, `legendary`).
-
-### Example: Item Reward
-```json
-{
-  "id": "diamond_reward",
-  "type": "item",
-  "displayName": "&bDiamonds",
-  "item": "minecraft:diamond",
-  "amountMin": 1,
-  "amountMax": 5,
-  "weight": 50,
-  "rarity": "rare"
-}
-```
-
-### Example: Command Reward
-```json
-{
-  "id": "money_reward",
-  "type": "command",
-  "displayName": "&a$1000",
-  "commands": [
-    "eco give %player% 1000"
-  ],
-  "weight": 30,
-  "rarity": "rare"
-}
-```
-
-### Example: Pokémon Reward (Cobblemon)
-```json
-{
-  "id": "shiny_charizard",
-  "type": "cobblemon_pokemon",
-  "displayName": "&6Shiny Charizard",
-  "weight": 1,
-  "rarity": "legendary",
-  "pokemon": {
-    "species": "charizard",
-    "level": 50,
-    "shiny": true,
-    "ivPreset": "perfect",
-    "ballType": "cobblemon:ultra_ball"
-  }
-}
-```
-
----
-
-## 6. Complete Example
-
-Here is a full, copy-pasteable JSON configuration for our `epic_crate`. Save this as `config/unicrates/crates/epic_crate.json`.
-
-```json
-{
-  "configVersion": 1,
-  "id": "epic_crate",
-  "displayName": "&5&lEpic Crate",
-  "lore": [
-    "&7Contains epic loot!",
-    "&7Open with an Epic Key."
-  ],
-  "appearance": {
-    "displayMode": "item_display",
-    "vanillaBlockFallback": "minecraft:chest",
-    "glowEffect": true,
-    "scale": 1.2,
-    "builtinModel": "epic",
-    "guiTheme": "dark",
-    "hologram": {
-      "enabled": true,
-      "heightOffset": 1.8,
-      "lines": [
-        "&5&l[%crate%&5&l]",
-        "&7(&dRight-click &fto open&7)"
-      ]
-    }
+    "glowEffect": false,
+    "guiTheme": "dark"
   },
   "key": {
-    "id": "epic_key",
-    "displayName": "&5Epic Key",
+    "id": "festival_key",
+    "displayName": "&eFestival Key",
+    "lore": ["&7Opens the Festival Crate."],
+    "keyModel": "common",
+    "keyMode": "PHYSICAL",
     "consumeOnOpen": true,
-    "virtualKey": false,
-    "acceptedKeyIds": ["epic_key"],
-    "keyModel": "epic"
+    "acceptedKeyIds": ["festival_key"]
   },
   "opening": {
     "trigger": "right_click",
-    "openingType": "roulette",
+    "openingType": "world_animation",
+    "animationId": "common_wooden_timeline",
     "cooldownSeconds": 2,
-    "bulkOpenAllowed": true,
-    "bulkOpenOptions": [1, 5, "all"]
+    "bulkOpenAllowed": false
   },
   "animation": {
-    "type": "particle_vortex",
-    "durationTicks": 100
+    "type": "timeline",
+    "timeline": "common_wooden_timeline",
+    "durationTicks": 100,
+    "visibleToNearbyPlayers": true,
+    "cameraLock": false
+  },
+  "particles": {
+    "enabled": true,
+    "type": "spiral",
+    "particle": "minecraft:happy_villager",
+    "speed": 1.0,
+    "radius": 1.2,
+    "count": 2,
+    "heightOffset": 0.0
+  },
+  "hologram": {
+    "enabled": true,
+    "heightOffset": 1.8,
+    "lineSpacing": 0.28,
+    "lines": ["%crate%", "&7Key: %key%"]
   },
   "rewards": [
     {
-      "id": "diamond_reward",
+      "id": "iron",
       "type": "item",
-      "displayName": "&bDiamonds",
-      "item": "minecraft:diamond",
-      "amountMin": 3,
-      "amountMax": 10,
-      "weight": 100,
+      "displayName": "&fFour Iron Ingots",
+      "item": "minecraft:iron_ingot",
+      "count": 4,
+      "weight": 80,
       "rarity": "common"
     },
     {
-      "id": "money_reward",
-      "type": "command",
-      "displayName": "&a$5000",
-      "commands": [
-        "eco give %player% 5000"
-      ],
-      "weight": 50,
+      "id": "diamond",
+      "type": "item",
+      "displayName": "&bA Diamond",
+      "item": "minecraft:diamond",
+      "count": 1,
+      "weight": 20,
       "rarity": "rare"
-    },
-    {
-      "id": "shiny_charizard",
-      "type": "cobblemon_pokemon",
-      "displayName": "&6Shiny Charizard",
-      "pokemon": {
-        "species": "charizard",
-        "level": 50,
-        "shiny": true,
-        "ivPreset": "perfect"
-      },
-      "weight": 5,
-      "rarity": "legendary",
-      "broadcastOnWin": {
-        "enabled": true,
-        "message": "&6%player% just unboxed a Shiny Charizard from the Epic Crate!"
-      }
     }
   ]
 }
 ```
+
+With both rewards eligible and no modifiers or pity adjustment, their base chances are `80%` and `20%`. Weights are relative numbers; they do not need to total 100. [Rewards](./rewards) explains how availability, permissions, limits, and modifiers change the live pool.
+
+Run `/crate reload` and resolve reported validation errors before placing it.
+
+## Place it and give a test key
+
+Look at the block that should host the crate and run:
+
+```text
+/crate create festival_crate
+```
+
+Alternatively, give yourself a portable anchor and place it:
+
+```text
+/crate give @s festival_crate
+```
+
+Give yourself a physical key for this crate:
+
+```text
+/crate key give @s festival_crate 1 physical
+```
+
+Use a player name instead of `@s` in the server console. See [commands and permissions](../administration/commands) for the full command reference.
+
+Right-click with the key to test opening and delivery. Check preview with an empty hand or sneak-right-click according to your configuration. Confirm the prize count, key consumption, cooldown, hologram restoration, and model placement after opening.
+
+## Replace the model and physical key
+
+Keep the rewards and key identity. Replace the `appearance` section with:
+
+```json
+{
+  "displayMode": "item_display",
+  "customItemModel": "resources/models/festival_crate.json",
+  "customModelData": 1200,
+  "scale": 1.0,
+  "idleYOffset": 0.0,
+  "floatingRotation": false,
+  "guiTheme": "dark"
+}
+```
+
+Follow [model import](./model-import) to create this Java model and resolve its textures. Add these two fields to the existing `key` section for a custom physical key:
+
+```json
+{
+  "customItemModel": "resources/models/keys/festival_crate.json",
+  "customModelData": 1200
+}
+```
+
+Crate and key Custom Model Data are separate ranges on separate base items. Both can use `1200`, but two custom crate models cannot share a crate value, and two custom key models cannot share a key value.
+
+Export and install the [resource pack](./resource-packs). A single imported model does not automatically acquire the built-in hinged lid animation. Add reward displays, sounds, movement, and particles through a [custom timeline](./animations).
+
+## Choose the next layer
+
+| Change | Field or workflow |
+| --- | --- |
+| Model floats too high | `appearance.idleYOffset` |
+| Idle particles start too high | `particles.heightOffset` |
+| Text overlaps the model | `hologram.heightOffset` |
+| Different bundled physical key | `key.keyModel` |
+| Virtual keys | `key.keyMode: "VIRTUAL"`, optionally `key.virtualKeyId` |
+| Require several keys | `keyRequirements`, with `ALL` or `ANY` logic |
+| Immediate delivery | `opening.openingType: "instant"` |
+| Master Ball opening | Model `astral_pokeball`, engine opening `astral_reveal` |
+| New prize types or eligibility | [Rewards](./rewards) |
+| New server choreography | [Animations](./animations) |
+
+`glowEffect` controls the glowing display outline; it does not set block light output. The Master Ball's prize comes from your configured eligible reward pool.

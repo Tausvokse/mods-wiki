@@ -1,0 +1,22 @@
+.uc-gallery-filters { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0 10px; }
+.uc-gallery-filters label { display: grid; gap: 6px; flex: 1 1 180px; font-size: 13px; font-weight: 600; }
+.uc-gallery-filters input, .uc-gallery-filters select { width: 100%; border: 1px solid var(--vp-c-divider); border-radius: 8px; background: var(--vp-c-bg-soft); padding: 10px 12px; color: var(--vp-c-text-1); font: inherit; }
+.uc-gallery-filters input:focus-visible, .uc-gallery-filters select:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 2px; }
+.uc-gallery-count { font-size: 13px; color: var(--vp-c-text-2); }
+.uc-gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.uc-preview { min-width: 0; overflow: hidden; border: 1px solid var(--vp-c-divider); border-radius: 12px; margin: 20px 0; background: var(--vp-c-bg-soft); }
+.uc-gallery-grid .uc-preview { margin: 0; }
+.uc-preview-screen { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; overflow: hidden; cursor: pointer; background: #181721; }
+.uc-preview-screen img { display: block; width: 100%; height: 100%; object-fit: cover; margin: 0; }
+.uc-preview-screen:focus-visible { outline: 3px solid var(--vp-c-brand-1); outline-offset: -3px; }
+.uc-preview-control { position: absolute; right: 12px; bottom: 12px; padding: 5px 10px; border-radius: 6px; background: #17131de8; color: #fff; font-size: 12px; font-weight: 600; }
+.uc-preview-caption { display: grid; gap: 8px; padding: 16px; }
+.uc-preview-caption strong { font-size: 15px; }
+.uc-preview-caption code { justify-self: start; max-width: 100%; overflow-wrap: anywhere; font-size: 11px; }
+.uc-preview-caption span, .uc-preview-caption a { font-size: 12px; color: var(--vp-c-text-2); }
+.uc-preview-caption a { color: var(--vp-c-brand-1); }
+.uc-doc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.uc-doc-grid a { display: block; border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 20px; background: var(--vp-c-bg-soft); text-decoration: none !important; }
+.uc-doc-grid strong { display: block; margin-bottom: 6px; color: var(--vp-c-text-1); }
+.uc-doc-grid span { font-size: 13px; color: var(--vp-c-text-2); }
+@media (max-width: 640px) { .uc-gallery-grid, .uc-doc-grid { grid-template-columns: minmax(0, 1fr); } }

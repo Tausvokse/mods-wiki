@@ -20,28 +20,28 @@ hero:
       link: /custompokedolls/
 
 features:
-  - icon: 🎁
+  - icon: рџЋЃ
     title: UniCrates
-    details: Universal animated crates powered by Display Entities, custom GeckoLib opening sequences, and Showdown reward pools. Cross-loader Fabric & NeoForge.
+    details: "UniCrates 2.3: configurable reward pools, 31 crate rigs, 59 ready-to-use openings and a browser editor. Fabric & NeoForge for Minecraft 1.21.1."
     link: /unicrates/
-  - icon: ⚔️
+  - icon: вљ”пёЏ
     title: Ranked Battle Pass
-    details: Seasonal dual-track progression engine with Cobblemon 1.7 / 1.8+ battle hooks, cosmetic Pokédoll & Pokéball skins, and 100% EULA-compliant rewards.
+    details: Seasonal dual-track progression engine with Cobblemon 1.7 / 1.8+ battle hooks, cosmetic PokГ©doll & PokГ©ball skins, and 100% EULA-compliant rewards.
     link: /battlepass/
-  - icon: 📡
+  - icon: рџ“Ў
     title: CobbleTracker
-    details: Real-time legendary and shiny Pokémon radar with in-world beacon beams, custom HUD cards, and 3D animated GUI sprites.
+    details: Real-time legendary and shiny PokГ©mon radar with in-world beacon beams, custom HUD cards, and 3D animated GUI sprites.
     link: /cobbletracker/
-  - icon: 🏆
+  - icon: рџЏ†
     title: Cobblemon Tournament
     details: Automated competitive engine featuring Glicko-2 ranked queues, Swiss/Elimination brackets, and official Showdown clause enforcement.
     link: /tourney/
-  - icon: 🧸
+  - icon: рџ§ё
     title: Custom Pokedolls
-    details: GeckoLib 4.7-animated Pokémon statues and collectibles with dynamic scale modifiers, auto-rotation, and dedicated-server crash protection.
+    details: GeckoLib 4.7-animated PokГ©mon statues and collectibles with dynamic scale modifiers, auto-rotation, and dedicated-server crash protection.
     link: /custompokedolls/
-  - icon: ❓
-    title: Who's That Pokémon?
+  - icon: вќ“
+    title: Who's That PokГ©mon?
     details: Engaging chat and GUI guessing minigame with real-time dynamic silhouette dilation shaders, leaderboards, and sound effects.
     link: /guessthepokemon/
 ---

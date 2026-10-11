@@ -1,322 +1,202 @@
-# Custom Models & Rendering Architecture
-
-UniCrates renders all 3D crate models, animated rigs, holographic text, and prize items using native Minecraft **Display Entities** (`ItemDisplay`, `BlockDisplay`, and `TextDisplay`).
-
-> [!IMPORTANT]
-> **Zero GeckoLib Traps**: Unlike mods relying on complex third-party client renderers that frequently crash dedicated servers, UniCrates uses 100% vanilla Display Entities. Server CPU overhead is effectively 0.0 ms, and models render natively with GPU-accelerated client interpolation.
-
+---
+title: Models, Keys & Rigs
+description: The complete built-in model inventory, physical key models, rig variants, and appearance options.
 ---
 
-## 1. Dynamic Yaw Orientation (New in 2.0)
+# Models, Keys & Rigs
 
-When you look at a block and run `/crate create <id>`, UniCrates captures the player's yaw angle:
-- The persistent idle `ItemDisplay` is spawned with the exact rotation matrix matching your placement angle.
-- Holograms (`TextDisplay`) use `billboard: "center"` to face viewers while remaining locked to the anchor's vertical axis.
-- Dynamic idle animations (e.g., sinusoidal hovering, orbital halos, particles) calculate their spherical coordinates relative to the crate's placed yaw angle.
+UniCrates 2.3 exposes **31 canonical built-in model IDs**, each with a bundled physical key rig. Browse the [visual gallery](./gallery), then use this page to choose exact IDs and understand what each asset controls.
 
----
+## Built-in model gallery
 
-## 2. First-Person Key Viewmodel Transforms (New in 2.0)
+These stills show actual closed crates in Minecraft. Search by theme, inspect the canonical model ID and key CMD, and follow a card to its recorded opening.
 
-In version 2.0, 3D keys feature tailored transformation matrices in their model JSONs:
-- **`firstperson_righthand`**: Configured with rotation `[0, -45, 0]` and translations `[1.13, 3.2, 1.13]` so the key is held by its bow while the blade and teeth point straight forward into your crosshair.
-- **`thirdperson_righthand`**: Positioned naturally in the player's hand during third-person view.
-- **`gui` & `ground`**: Balanced isometric rendering for inventories and ground drops.
+<ModelGallery />
 
----
+## Select a bundled crate and key
 
-## 3. Universal Rotating Reward Animation (New in 2.0)
+Add these sections to your crate definition:
 
-During opening conclusions across all crate types:
-- The winning item or Cobblemon display is spawned above the crate with a continuous vertical angular velocity ($\approx 4^\circ/\text{tick}$).
-- Simulates the natural spinning and bobbing of dropped items in Minecraft while suspended dramatically in mid-air.
+```json
+{
+  "appearance": {
+    "displayMode": "item_display",
+    "builtinModel": "sculk_warden",
+    "scale": 1.0,
+    "idleYOffset": 0.0,
+    "floatingRotation": false,
+    "glowEffect": false
+  },
+  "key": {
+    "id": "my_warden_key",
+    "displayName": "&3Warden Key",
+    "keyModel": "sculk_warden",
+    "keyMode": "PHYSICAL",
+    "consumeOnOpen": true
+  }
+}
+```
 
----
+These are sections to merge into a complete [crate definition](./create). Run `/crate reload` after editing a file. Bundled assets ship with the mod; imported assets need a [resource pack](./resource-packs).
 
-## 4. Built-in Rigs & Custom Models
+`appearance.builtinModel` selects the world model. `key.keyModel` selects the visual on the static `unicrates:crate_key` item. `key.id` identifies the key accepted by gameplay. A key's shape does not change its identity, consumption rule, or virtual balance.
 
-### Built-in 3D Rigs
-UniCrates bundles high-fidelity block models accessible via `"builtinModel"`:
-- `"common"`: Wooden reinforced chest with iron braces.
-- `"rare"`: Lapis and sea lantern infused chest.
-- `"epic"`: Amethyst crystal and dark prismarine vault.
-- `"legendary"`: Netherite and glowing magma forge.
-- `"pokeball"`: Custom 3D interactive Poké Ball rig.
+## Complete built-in inventory
 
-<div class="crates-grid">
-  <div class="crate-card angelic">
-    <div class="crate-badge">Mythic Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/angelic.png" alt="Angelic Crate" /></div>
-    <div class="crate-info">
-      <h3>Angelic Crate</h3>
-      <p class="crate-desc">Golden crown trim with feathered wings and holy ascendance halos.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>angelic</code></span>
-        <span><strong>Animation:</strong> <code>angelic_ascension</code></span>
-        <span><strong>Key:</strong> <code>angelic_crate_key</code></span>
-      </div>
-    </div>
-  </div>
+IDs are normalized to lowercase and accept a trailing `_crate`: `sculk_warden_crate` resolves to `sculk_warden`. The canonical names below avoid that extra suffix. The key CMD column documents the bundled `custom_model_data` mapping; select `keyModel` instead of manually assigning these reserved values.
 
-  <div class="crate-card demonic">
-    <div class="crate-badge red">Nether Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/demonic.png" alt="Demonic Crate" /></div>
-    <div class="crate-info">
-      <h3>Demonic Crate</h3>
-      <p class="crate-desc">Soul fire pillars, curving magma horns, and pulsating nether embers.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>demonic</code></span>
-        <span><strong>Animation:</strong> <code>demonic_hellfire</code></span>
-        <span><strong>Key:</strong> <code>demonic_crate_key</code></span>
-      </div>
-    </div>
-  </div>
+| Canonical model ID | Crate canvas item | Physical key rig | Key CMD |
+| --- | --- | --- | ---: |
+| `sculk_warden` | `unicrates:crate_display_sculk_warden` | `sculk_warden_key` | 1 |
+| `frostmourne_glacial` | `unicrates:crate_display_frostmourne_glacial` | `frostmourne_glacial_key` | 2 |
+| `solar_flare` | `unicrates:crate_display_solar_flare` | `solar_flare_key` | 3 |
+| `amethyst_geode` | `unicrates:crate_display_amethyst_geode` | `amethyst_geode_key` | 4 |
+| `abyssal_prismarine` | `unicrates:crate_display_abyssal_prismarine` | `abyssal_prismarine_key` | 5 |
+| `vampiric_blood` | `unicrates:crate_display_vampiric_blood` | `vampiric_blood_key` | 6 |
+| `ender_voidborn` | `unicrates:crate_display_ender_voidborn` | `ender_voidborn_key` | 7 |
+| `witchcraft_cauldron` | `unicrates:crate_display_witchcraft_cauldron` | `witchcraft_cauldron_key` | 8 |
+| `aztec_jaguar` | `unicrates:crate_display_aztec_jaguar` | `aztec_jaguar_key` | 9 |
+| `pharaoh_tomb` | `unicrates:crate_display_pharaoh_tomb` | `pharaoh_tomb_key` | 10 |
+| `celestial_astral` | `unicrates:crate_display_celestial_astral` | `celestial_astral_key` | 11 |
+| `steampunk_chronos` | `unicrates:crate_display_steampunk_chronos` | `steampunk_chronos_key` | 12 |
+| `radioactive_biohazard` | `unicrates:crate_display_radioactive_biohazard` | `radioactive_biohazard_key` | 13 |
+| `tactical_airdrop` | `unicrates:crate_display_tactical_airdrop` | `tactical_airdrop_key` | 14 |
+| `mecha_dragon` | `unicrates:crate_display_mecha_dragon` | `mecha_dragon_key` | 15 |
+| `samurai_shinto` | `unicrates:crate_display_samurai_shinto` | `samurai_shinto_key` | 16 |
+| `kraken_galleon` | `unicrates:crate_display_kraken_galleon` | `kraken_galleon_key` | 17 |
+| `retro_arcade` | `unicrates:crate_display_retro_arcade` | `retro_arcade_key` | 18 |
+| `prismatic_fairy` | `unicrates:crate_display_prismatic_fairy` | `prismatic_fairy_key` | 19 |
+| `wyrm_hoard` | `unicrates:crate_display_wyrm_hoard` | `wyrm_hoard_key` | 20 |
+| `angelic` | `unicrates:crate_display_angelic` | `angelic_key` | 21 |
+| `atlantis` | `unicrates:crate_display_atlantis` | `atlantis_key` | 22 |
+| `demonic` | `unicrates:crate_display_demonic` | `demonic_key` | 23 |
+| `money` | `unicrates:crate_display_money` | `money_key` | 24 |
+| `nature` | `unicrates:crate_display_nature` | `nature_key` | 25 |
+| `pokemon` | `unicrates:crate_display_pokemon` | `pokemon_key` | 26 |
+| `common` | `unicrates:crate_display_common` | `common_key` | 27 |
+| `rare` | `unicrates:crate_display_rare` | `rare_key` | 28 |
+| `epic` | `unicrates:crate_display_epic` | `epic_key` | 29 |
+| `legendary` | `unicrates:crate_display_legendary` | `legendary_key` | 30 |
+| `astral_pokeball` | `unicrates:crate_display_astral_pokeball` | `astral_pokeball_key` | 31 |
 
-  <div class="crate-card atlantis">
-    <div class="crate-badge cyan">Oceanic Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/atlantis.png" alt="Atlantis Crate" /></div>
-    <div class="crate-info">
-      <h3>Atlantis Crate</h3>
-      <p class="crate-desc">Dark prismarine vault with coral outcroppings and conduit bubble vents.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>atlantis</code></span>
-        <span><strong>Animation:</strong> <code>atlantis_abyss</code></span>
-        <span><strong>Key:</strong> <code>atlantis_crate_key</code></span>
-      </div>
-    </div>
-  </div>
+`interactive`, `interactive_key`, and `pokeball_interactive` are key-model aliases for the `pokemon` key (CMD `26`). They are not additional crate model IDs.
 
-  <div class="crate-card pokemon">
-    <div class="crate-badge red-white">Cobblemon Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/pokemon.png" alt="Pokemon Crate" /></div>
-    <div class="crate-info">
-      <h3>Pokémon Master Crate</h3>
-      <p class="crate-desc">High-tech Poké Ball terminal with neon cyan energy conduits and capture latch.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>pokemon</code></span>
-        <span><strong>Animation:</strong> <code>pokemon_master_capture</code></span>
-        <span><strong>Key:</strong> <code>pokemon_crate_key</code></span>
-      </div>
-    </div>
-  </div>
+### Physical key image samples
 
-  <div class="crate-card money">
-    <div class="crate-badge gold">Economy Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/money.png" alt="Money Crate" /></div>
-    <div class="crate-info">
-      <h3>Money / Jackpot Crate</h3>
-      <p class="crate-desc">Gilded emerald lockbox overflowing with banknotes and golden ingots.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>money</code></span>
-        <span><strong>Animation:</strong> <code>money_jackpot</code></span>
-        <span><strong>Key:</strong> <code>money_crate_key</code></span>
-      </div>
-    </div>
-  </div>
+These ten existing key images illustrate the bundled shapes. All 31 key rigs are listed above; the remaining themes can be inspected through the web editor's key preview using the corresponding `keyModel` or in Minecraft.
 
-  <div class="crate-card nature">
-    <div class="crate-badge green">Botanical Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/nature.png" alt="Nature Crate" /></div>
-    <div class="crate-info">
-      <h3>Nature Bloom Crate</h3>
-      <p class="crate-desc">Ancient overgrown mossy shrine adorned with glowing cyan petals and spores.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>nature</code></span>
-        <span><strong>Animation:</strong> <code>nature_bloom</code></span>
-        <span><strong>Key:</strong> <code>nature_crate_key</code></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="crate-card legendary">
-    <div class="crate-badge gold">Legendary Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/legendary.png" alt="Legendary Crate" /></div>
-    <div class="crate-info">
-      <h3>Legendary Vault</h3>
-      <p class="crate-desc">Heavy netherite safe reinforced with pure gold bands and corner pedestals.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>legendary</code></span>
-        <span><strong>Animation:</strong> <code>particle_vortex</code></span>
-        <span><strong>Key:</strong> <code>legendary_crate_key</code></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="crate-card epic">
-    <div class="crate-badge purple">Epic Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/epic.png" alt="Epic Crate" /></div>
-    <div class="crate-info">
-      <h3>Epic Crystal Crate</h3>
-      <p class="crate-desc">Amethyst-faceted lockbox with deepslate trim and shimmering crystal locks.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>epic</code></span>
-        <span><strong>Animation:</strong> <code>item_display_carousel</code></span>
-        <span><strong>Key:</strong> <code>epic_crate_key</code></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="crate-card rare">
-    <div class="crate-badge blue">Rare Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/rare.png" alt="Rare Crate" /></div>
-    <div class="crate-info">
-      <h3>Rare Lapis Crate</h3>
-      <p class="crate-desc">Polished lapis lazuli chest bordered by reinforced iron and sapphire runes.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>rare</code></span>
-        <span><strong>Animation:</strong> <code>light_beam_pillar</code></span>
-        <span><strong>Key:</strong> <code>rare_crate_key</code></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="crate-card common">
-    <div class="crate-badge gray">Starter Tier</div>
-    <div class="crate-img-wrap"><img src="/UniCrates/models/common.png" alt="Common Crate" /></div>
-    <div class="crate-info">
-      <h3>Common Wooden Crate</h3>
-      <p class="crate-desc">Classic reinforced spruce timber crate with riveted iron strapping.</p>
-      <div class="crate-meta">
-        <span><strong>Model:</strong> <code>common</code></span>
-        <span><strong>Animation:</strong> <code>classic_chest_pop</code></span>
-        <span><strong>Key:</strong> <code>common_crate_key</code></span>
-      </div>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin:1.5rem 0">
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/angelic_key.png" alt="Angelic physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Angelic</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/demonic_key.png" alt="Demonic physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Demonic</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/atlantis_key.png" alt="Atlantis physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Atlantis</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/pokemon_key.png" alt="Pokémon physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Pokémon</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/money_key.png" alt="Money physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Money</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/nature_key.png" alt="Nature physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Nature</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/legendary_key.png" alt="Legendary physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Legendary</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/epic_key.png" alt="Epic physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Epic</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/rare_key.png" alt="Rare physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Rare</figcaption></figure>
+  <figure style="margin:0;text-align:center"><img src="/UniCrates/models/common_key.png" alt="Common physical key" loading="lazy" style="height:90px;object-fit:contain;margin:auto" /><figcaption>Common</figcaption></figure>
 </div>
 
-### 3D Crate Keys Gallery
+### Master Ball
 
-Each crate has a corresponding 3D key model rendered with `custom_model_data` and precise `firstperson_righthand` transformations:
+The modern Master Ball uses model **`astral_pokeball`** and opening **`astral_reveal`**. The shipped `astral_reveal_crate` uses key identity `astral_reveal_key` and the `pokemon` key rig. You can choose `astral_pokeball` for its physical key visual instead; its bundled rig exists with CMD `31`.
 
-<div class="keys-grid">
-  <div class="key-card"><img src="/UniCrates/models/angelic_key.png" alt="Angelic Key" /><span>Angelic Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/demonic_key.png" alt="Demonic Key" /><span>Demonic Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/atlantis_key.png" alt="Atlantis Key" /><span>Atlantis Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/pokemon_key.png" alt="Pokemon Key" /><span>Pokemon Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/money_key.png" alt="Money Key" /><span>Money Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/nature_key.png" alt="Nature Key" /><span>Nature Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/legendary_key.png" alt="Legendary Key" /><span>Legendary Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/epic_key.png" alt="Epic Key" /><span>Epic Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/rare_key.png" alt="Rare Key" /><span>Rare Key</span></div>
-  <div class="key-card"><img src="/UniCrates/models/common_key.png" alt="Common Key" /><span>Common Key</span></div>
-</div>
+The world opening uses the server-confirmed winner from the eligible reward pool. Configure your own prizes; the model does not imply a fixed Pokémon species. Its pedestal has a dedicated startup-registered canvas item, `unicrates:crate_display_astral_pokeball_pedestal`.
 
-### Complete Preset Matrix
+## Rig files and opening variants
 
-| Preset ID | Display Name | 3D Rig Model | Animation | Opening Style | Key ID |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `pokeball_interactive_crate` | **Interactive Poke Crate** | Poké Ball Ring | `interactive_pokeball` | 3D Hand-Pick | `interactive_key` |
-| `pokemon_crate` | **Pokemon Crate** | `pokemon` | `pokemon_master_capture` | World 3D Anim | `pokemon_crate_key` |
-| `angelic_crate` | **Angelic Crate** | `angelic` | `angelic_ascension` | World 3D Anim | `angelic_crate_key` |
-| `demonic_crate` | **Demonic Crate** | `demonic` | `demonic_hellfire` | World 3D Anim | `demonic_crate_key` |
-| `atlantis_crate` | **Atlantis Crate** | `atlantis` | `atlantis_abyss` | World 3D Anim | `atlantis_crate_key` |
-| `money_crate` | **Money Crate** | `money` | `money_jackpot` | World 3D Anim | `money_crate_key` |
-| `nature_crate` | **Nature Crate** | `nature` | `nature_bloom` | World 3D Anim | `nature_crate_key` |
-| `selectable_crate` | **Destiny Oracle Crate** | `legendary` | Oracle Cards | Selectable Cards | `selectable_crate_key` |
-| `instant_crate` | **Tactical Airdrop Crate** | `legendary` | None (Instant) | Instant Grant | `instant_crate_key` |
-| `basic_gui_crate` | **Roulette Crate** | Chest Anchor | CS:GO Carousel | GUI Roulette | `basic_gui_crate_key` |
-| `carousel_crate` | **Carousel Crate** | Chest Anchor | `item_display_carousel` | World 3D Anim | `carousel_crate_key` |
-| `vortex_crate` | **Vortex Crate** | Chest Anchor | `particle_vortex` | World 3D Anim | `vortex_crate_key` |
-| `firework_crate` | **Firework Crate** | Chest Anchor | `firework_burst` | World 3D Anim | `firework_crate_key` |
-| `beam_crate` | **Beam Crate** | Chest Anchor | `light_beam_pillar` | World 3D Anim | `beam_crate_key` |
-| `classic_chest_crate` | **Classic Crate** | Chest Anchor | `classic_chest_pop` | World 3D Anim | `classic_chest_crate_key` |
-| `hologram_spin_crate` | **Cyber Holo Crate** | Chest Anchor | `hologram_spin` | World 3D Anim | `hologram_spin_crate_key` |
+For each canonical ID, the mod contains a crate wrapper model at `assets/unicrates/models/item/crate_display_<id>.json` and geometry under `assets/unicrates/models/item/rig/`. Keys use `rig/<id>_key.json`. The display canvas items are registered at startup.
 
----
+| Variant suffix | Purpose |
+| --- | --- |
+| No suffix | Closed/idle model |
+| `_opening` | Opening-state wrapper |
+| `_opening_1` … `_opening_5` | Opening pose/frame wrappers |
+| `_open` | Open-state wrapper |
+| `_closing_1` … `_closing_3` | Closing pose/frame wrappers |
+| `_base` | Stationary body for a decomposed hinge |
+| `_lid` | Separate lid with a local hinge pivot |
 
-### Adding Your Own Custom Models
-You can add your own models using **three non-programming pathways**:
+Some wrappers intentionally point to the same geometry. Having a frame filename does not guarantee a distinct pose. A rig is a set of item-model assets; it is not a GeckoLib skeleton or an imported Blockbench animation.
 
-#### 1. CustomModelData (ItemsAdder, Oraxen & Custom Resource Packs)
-If your server uses custom item models via `CustomModelData`:
-```json
-"appearance": {
-  "displayMode": "item_display",
-  "customItemModel": "minecraft:paper",
-  "customModelData": 10005,
-  "scale": 1.2,
-  "idleYOffset": 0.1,
-  "glowEffect": true
-}
-```
-UniCrates automatically attaches the `custom_model_data` component to the spawned `ItemDisplay` entity.
+Built-in hinge control uses separate base/lid `ItemDisplay` entities and native transform interpolation. `angelic`, `atlantis`, `demonic`, `money`, `nature`, and `pokemon` have an additional 180-degree facing correction. The runtime applies their hinge offset and opening pitch accordingly. Do not compensate these bundled rigs by rotating their JSON again.
 
-#### 2. Direct Resource Pack Item Models
-Place your Blockbench JSON model inside your server's resource pack under `assets/<namespace>/models/item/<model_name>.json`:
-```json
-"appearance": {
-  "displayMode": "item_display",
-  "customItemModel": "mymod:crate_special",
-  "scale": 1.0,
-  "glowEffect": true
-}
-```
+### Shipped crate presets
 
-#### 3. Vanilla Block/Item Canvas
-Use any vanilla item or block as a floating canvas:
-```json
-"appearance": {
-  "displayMode": "item_display",
-  "customItemModel": "minecraft:beacon",
-  "scale": 1.0
-}
-```
+This matrix lists the **36 shipped crate definitions**, including the presets that reuse existing rigs. Key identity and key rig are intentionally separate columns. A timeline ID is different from an engine-controlled scene variant.
 
-### 4. Zero-Code Custom Textures & One-Click Pack Export
+| Crate ID | Model | Key identity | Key rig | Opening reference |
+| --- | --- | --- | --- | --- |
+| `abyssal_prismarine_crate` | `abyssal_prismarine_crate` | `abyssal_prismarine_key` | `abyssal_prismarine` | `abyssal_prismarine_timeline` |
+| `amethyst_geode_crate` | `amethyst_geode_crate` | `amethyst_geode_key` | `amethyst_geode` | `amethyst_geode_timeline` |
+| `angelic_crate` | `angelic_crate` | `angelic_key` | `angelic` | `angelic_ascension` |
+| `articuno_crate` | `frostmourne_glacial` | `articuno_crate_key` | `frostmourne_glacial` | `scene / articuno_frost` |
+| `astral_reveal_crate` | `astral_pokeball` | `astral_reveal_key` | `pokemon` | `astral_reveal` |
+| `atlantis_crate` | `atlantis_crate` | `atlantis_key` | `atlantis` | `atlantis_abyss` |
+| `aztec_jaguar_crate` | `aztec_jaguar_crate` | `aztec_jaguar_key` | `aztec_jaguar` | `aztec_jaguar_timeline` |
+| `celestial_astral_crate` | `celestial_astral_crate` | `celestial_astral_key` | `celestial_astral` | `celestial_astral_timeline` |
+| `charizard_crate` | `solar_flare` | `charizard_crate_key` | `solar_flare` | `scene / charizard_rift` |
+| `common_crate` | `common_crate` | `common_key` | `common` | `common_wooden_timeline` |
+| `demonic_crate` | `demonic_crate` | `demonic_key` | `demonic` | `demonic_hellfire` |
+| `ender_voidborn_crate` | `ender_voidborn_crate` | `ender_voidborn_key` | `ender_voidborn` | `ender_voidborn_timeline` |
+| `epic_crate` | `epic_crate` | `epic_key` | `epic` | `epic_obsidian_timeline` |
+| `frostmourne_glacial_crate` | `frostmourne_glacial_crate` | `frostmourne_glacial_key` | `frostmourne_glacial` | `frostmourne_glacial_timeline` |
+| `gengar_crate` | `ender_voidborn` | `gengar_crate_key` | `ender_voidborn` | `scene / gengar_shadow` |
+| `kraken_galleon_crate` | `kraken_galleon_crate` | `kraken_galleon_key` | `kraken_galleon` | `kraken_galleon_timeline` |
+| `legendary_crate` | `legendary_crate` | `legendary_key` | `legendary` | `legendary_gold_timeline` |
+| `mecha_dragon_crate` | `mecha_dragon_crate` | `mecha_dragon_key` | `mecha_dragon` | `mecha_dragon_timeline` |
+| `money_crate` | `money_crate` | `money_key` | `money` | `money_jackpot` |
+| `nature_crate` | `nature_crate` | `nature_key` | `nature` | `nature_bloom` |
+| `pharaoh_tomb_crate` | `pharaoh_tomb_crate` | `pharaoh_tomb_key` | `pharaoh_tomb` | `pharaoh_tomb_timeline` |
+| `pikachu_crate` | `celestial_astral` | `pikachu_crate_key` | `celestial_astral` | `scene / pikachu_electric` |
+| `pokeball_interactive_crate` | `pokemon` | `interactive_key` | `pokemon` | `interactive_pokeball` |
+| `pokemon_crate` | `pokemon_crate` | `pokemon_key` | `pokemon` | `scene / charizard_rift` |
+| `prismatic_fairy_crate` | `prismatic_fairy_crate` | `prismatic_fairy_key` | `prismatic_fairy` | `prismatic_fairy_timeline` |
+| `radioactive_biohazard_crate` | `radioactive_biohazard_crate` | `radioactive_biohazard_key` | `radioactive_biohazard` | `radioactive_biohazard_timeline` |
+| `rare_crate` | `rare_crate` | `rare_key` | `rare` | `rare_iron_timeline` |
+| `retro_arcade_crate` | `retro_arcade_crate` | `retro_arcade_key` | `retro_arcade` | `retro_arcade_timeline` |
+| `samurai_shinto_crate` | `samurai_shinto_crate` | `samurai_shinto_key` | `samurai_shinto` | `samurai_shinto_timeline` |
+| `sculk_warden_crate` | `sculk_warden_crate` | `sculk_warden_key` | `sculk_warden` | `sculk_warden_timeline` |
+| `solar_flare_crate` | `solar_flare_crate` | `solar_flare_key` | `solar_flare` | `solar_flare_timeline` |
+| `steampunk_chronos_crate` | `steampunk_chronos_crate` | `steampunk_chronos_key` | `steampunk_chronos` | `steampunk_chronos_timeline` |
+| `tactical_airdrop_crate` | `tactical_airdrop_crate` | `tactical_airdrop_key` | `tactical_airdrop` | `tactical_airdrop_timeline` |
+| `vampiric_blood_crate` | `vampiric_blood_crate` | `vampiric_blood_key` | `vampiric_blood` | `vampiric_blood_timeline` |
+| `witchcraft_cauldron_crate` | `witchcraft_cauldron_crate` | `witchcraft_cauldron_key` | `witchcraft_cauldron` | `witchcraft_cauldron_timeline` |
+| `wyrm_hoard_crate` | `wyrm_hoard_crate` | `wyrm_hoard_key` | `wyrm_hoard` | `wyrm_hoard_timeline` |
 
-UniCrates allows server owners and builders to add custom crate textures without any code or manual resource-pack zipping:
+Use [animations](./animations) to distinguish custom timeline steps, interactive selection, and cinematic engine openings.
 
-1. **Drop Textures**: Place your PNG files in `config/unicrates/resources/<crate_id>/`:
-   - `block.png` — In-world crate texture
-   - `key.png` — Physical key texture
-   - `icon.png` — GUI roulette and preview icon
-2. **Export Pack**: Run the built-in compiler command in-game:
-   ```bash
-   /crate exportpack
-   ```
-   UniCrates automatically generates `pack.mcmeta`, registers item models, and bundles everything into `.minecraft/resourcepacks/UniCrates-ResourcePack.zip`.
-3. Press `F3 + T` to reload your client textures.
+## Appearance resolution
 
-### 5. In-Game Hand Reward Addition
+For the idle item display, a nonblank `customItemModel` takes precedence over `builtinModel`. A `.json` file reference uses a paper canvas plus Custom Model Data; an item ID uses that existing registered item. Otherwise a known built-in model is used, followed by `vanillaBlockFallback`.
 
-Skip writing complex JSON strings and item IDs manually. Add any held item directly:
-```bash
-/crate reward add <crate> hand [weight] [rarity]
-# Quick alias:
-/crate addhand <crate> [weight] [rarity]
-```
-UniCrates captures the exact item in your hand, including:
-- Custom Names, Lore, and MiniMessage styling
-- Enchantments and Data Components
-- Custom Model Data
-- Cobblemon Pokémon species, forms, and shiny variants
+| Source | Example | What you must supply |
+| --- | --- | --- |
+| Bundled rig | `builtinModel: "epic"` | Mod assets installed on the client |
+| Imported Java model | `customItemModel: "resources/models/my_crate.json"` | Model, PNG dependencies, unique CMD, generated pack |
+| Existing item with a pack override | `customItemModel: "minecraft:paper"`, CMD `10005` | Your external pack's matching paper override |
+| Existing registered item | `customItemModel: "minecraft:beacon"` | The item must exist in the installed game/mod registry |
 
-Run `/crate reload` to instantly rebuild the dynamic server resource pack and update in-world displays.
+An arbitrary model resource such as `myserver:beautiful_chest` does not create a registered item. Use the imported Java-model route, or select an existing item whose resource-pack model you override. ItemsAdder/Oraxen-style resource packs can be used through matching item/CMD assets; this is resource-pack compatibility, not a bundled plugin bridge.
 
-<style>
-.crates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-.crate-card { background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; position: relative; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
-.crate-card:hover { transform: translateY(-6px); border-color: var(--vp-c-brand-1); box-shadow: 0 10px 24px rgba(0,0,0,0.35); }
-.crate-badge { position: absolute; top: 12px; right: 12px; background: rgba(255, 215, 0, 0.2); color: #ffd700; border: 1px solid rgba(255, 215, 0, 0.4); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px; }
-.crate-badge.red { background: rgba(255, 68, 68, 0.2); color: #ff5555; border-color: rgba(255, 68, 68, 0.4); }
-.crate-badge.cyan { background: rgba(0, 210, 255, 0.2); color: #00d2ff; border-color: rgba(0, 210, 255, 0.4); }
-.crate-badge.red-white { background: rgba(238, 21, 21, 0.2); color: #ff6b6b; border-color: rgba(238, 21, 21, 0.4); }
-.crate-badge.green { background: rgba(76, 209, 55, 0.2); color: #4cd137; border-color: rgba(76, 209, 55, 0.4); }
-.crate-badge.purple { background: rgba(156, 39, 176, 0.2); color: #ba68c8; border-color: rgba(156, 39, 176, 0.4); }
-.crate-badge.blue { background: rgba(33, 150, 243, 0.2); color: #64b5f6; border-color: rgba(33, 150, 243, 0.4); }
-.crate-badge.gray { background: rgba(158, 158, 158, 0.2); color: #bdbdbd; border-color: rgba(158, 158, 158, 0.4); }
-.crate-img-wrap { background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.2) 80%); padding: 1.5rem; display: flex; align-items: center; justify-content: center; height: 210px; }
-.crate-img-wrap img { max-height: 180px; max-width: 100%; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.5)); transition: transform 0.3s ease; }
-.crate-card:hover .crate-img-wrap img { transform: scale(1.08) rotate(-2deg); }
-.crate-info { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
-.crate-info h3 { margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--vp-c-text-1); }
-.crate-desc { font-size: 0.85rem; color: var(--vp-c-text-2); line-height: 1.4; margin-bottom: 1rem; flex: 1; }
-.crate-meta { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.78rem; background: var(--vp-c-bg); padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid var(--vp-c-border); }
-.crate-meta code { font-size: 0.75rem; }
-.keys-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; margin: 1.5rem 0 2.5rem 0; }
-.key-card { background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-border); border-radius: 10px; padding: 0.8rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; transition: transform 0.2s ease, border-color 0.2s ease; }
-.key-card:hover { transform: translateY(-4px); border-color: var(--vp-c-brand-1); }
-.key-card img { max-height: 80px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); }
-.key-card span { font-size: 0.78rem; font-weight: 600; color: var(--vp-c-text-1); }
-</style>
+### Placement controls
+
+| Field | Meaning |
+| --- | --- |
+| `appearance.scale` | Positive finite display scale, up to `50` |
+| `appearance.idleYOffset` | Vertical adjustment of the physical model |
+| `appearance.floatingRotation` | Enables the idle rotation behavior |
+| `appearance.glowEffect` | Glowing entity outline; does not emit block light |
+| `particles.heightOffset` | Idle particle emitter height, independent of the model |
+| `hologram.heightOffset` | Text placement, independent of both |
+
+The physical anchor uses `0.5 * scale + idleYOffset`. Idle particle emitters start from the block center plus `particles.heightOffset`. Keep those values separate when correcting placement. `displayMode` is validated against `item_display`, `block_display`, and `vanilla_block`; the imported cube-model workflow uses `item_display`.
+
+## Preview and acceptance
+
+The web editor renders Java cube geometry and supported PNG textures, with orbit, zoom, and reset controls. Built-in previews resolve the copied canonical mod assets. The wiki's visual gallery documents those assets.
+
+Lighting is approximate. Generated item layers, missing parent/texture assets, held-key display transforms, and final in-game openings require inspection in Minecraft. A single imported mesh does not gain the built-in hinge automatically, and the browser model viewer is not a full Minecraft opening player.
+
+Continue with [model import](./model-import) for Blockbench exports, or [resource packs](./resource-packs) to distribute custom textures.

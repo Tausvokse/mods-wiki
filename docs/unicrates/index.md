@@ -1,50 +1,78 @@
-# UniCrates Documentation
-
-Welcome to the official documentation for **UniCrates** (Version 2.1.0-beta)!
-
-UniCrates is a production-grade, multi-loader (Fabric & NeoForge) data-driven crate and lootbox engine designed natively for **Minecraft 1.21.1** with first-class **Cobblemon 1.7 / 1.8+** integration.
-
+---
+layout: home
+title: UniCrates 2.3
+description: Complete UniCrates documentation, configuration reference, animation previews and custom content tutorials.
+hero:
+  name: UniCrates 2.3
+  text: Your rewards. Your opening.
+  tagline: Animated crates for Minecraft 1.21.1 on Fabric and NeoForge. Configure rewards, choose a model, watch an opening, and build your own experience.
+  actions:
+    - theme: brand
+      text: Install & create your first crate
+      link: /unicrates/getting-started/
+    - theme: alt
+      text: Watch 59 opening GIFs
+      link: /unicrates/custom-content/gallery
+    - theme: alt
+      text: Open the web editor
+      link: https://unicrates-cloud-relay.tausvokse.workers.dev/#/
+features:
+  - icon: 🎁
+    title: Models and matching keys
+    details: 31 built-in crate rigs and key models, plus custom model and resource-pack workflows. Choose the model independently from its opening.
+    link: /unicrates/custom-content/models
+  - icon: ✨
+    title: 59 ready-to-use openings
+    details: 52 JSON timelines, four Pokémon scenes, Master Singularity, interactive Poké Ball selection and a GUI roulette. Browse real recorded GIF previews.
+    link: /unicrates/custom-content/gallery
+  - icon: 🛠️
+    title: Make it your own
+    details: Edit rewards, keys, models, idle particles and appearance in the browser. Author custom timeline actions in JSON with a complete step-by-step guide.
+    link: /unicrates/custom-content/web-editor
+  - icon: 🧩
+    title: Rewards and integrations
+    details: Item, command, economy, key and Cobblemon rewards. Physical and virtual keys, weighted pools, pity, milestones and recoverable delivery.
+    link: /unicrates/custom-content/rewards
 ---
 
-## What makes UniCrates 2.0 Special?
+## Start with the task you want to complete
 
-- **Dual-Loader Parity**: Single shared architecture across Fabric and NeoForge with zero split-package overhead or runtime desyncs.
-- **Pure Vanilla Display Entities**: Zero GeckoLib dedicated server traps! All idle animations, 3D crate models, rotating reward drops, and floating holograms run entirely on vanilla `ItemDisplay`, `BlockDisplay`, and `TextDisplay` entities with 0.0 ms tick overhead.
-- **Dynamic Orientation & Yaw Conformance (New in 2.0)**: Placed crates automatically align to the exact angle you were looking during `/crate create`. Idle rigs, particle trails, and orbiting props conform to the crate's facing direction.
-- **First-Person Key Viewmodel Alignment (New in 2.0)**: Bespoke 3D key display transforms orient keys straight forward from the player's view in first-person without awkward vertical tilt.
-- **Universal Floating Item Animation (New in 2.0)**: Won prize items across all crate models rotate smoothly around their vertical Y-axis with natural physics bobbing.
-- **Anti-Interference Player Shield (New in 2.0)**: Outside players trying to steal or interrupt active crate openings are gently pushed back by a localized velocity shield with status warnings.
-- **Interactive 3D Poké Ball Selection**: Physical in-world 3D roulette where players interact directly with floating Poké Balls featuring GPU scale interpolation, main-hand security, and disconnect failsafes.
-- **Cinematic Orbit Camera Splines**: Cinematic Catmull-Rom orbit camera curves for Legendary and Mythic reward drops with instant combat-damage safety abort.
-- **LuckPerms-Style Web Editor (`/crates editor`) & GUI Editor**: Create and edit crates, configure rewards, customize 47 animation timelines, and sync in real-time with one command.
-- **Asynchronous Discord Webhooks**: Rich Discord victory embeds with 3D player skin avatars and Cobblemon IV/EV/Shiny stats.
-- **Triple Storage Backend**: Support for `flatfile`, `sqlite`, and `mysql`/`mariadb` with automated one-shot live data migration.
+| I want to… | Read this |
+|---|---|
+| Install the mod and open my first crate | [Getting started](./getting-started/) |
+| Choose an opening after seeing how it looks | [GIF gallery](./custom-content/gallery) and [opening catalog](./custom-content/animation-catalog) |
+| Create a crate with the browser editor | [Web editor walkthrough](./custom-content/web-editor) |
+| Create or adjust JSON files | [Crate tutorial](./custom-content/create), [crate field reference](./configuration/crate-reference) and [JSON formats](./custom-content/json) |
+| Add Pokémon, items, money or commands to a pool | [Rewards guide](./custom-content/rewards) |
+| Configure floating models and idle effects | [Models](./custom-content/models) and [idle animations](./custom-content/idle-animations) |
+| Write my own animation | [Timeline tutorial](./custom-content/animation-tutorial) and [action reference](./custom-content/timeline-reference) |
+| Import a Blockbench model or replace a texture | [Model import](./custom-content/model-import) and [resource packs](./custom-content/resource-packs) |
+| Configure a database, backups or recovery | [Storage guide](./configuration/storage) |
+| Find commands and exact permission nodes | [Commands](./administration/commands) and [permissions](./administration/permissions) |
+| Troubleshoot a crate, reward or resource pack | [Troubleshooting](./getting-started/troubleshooting) |
 
----
+## See the latest opening
 
-## Visual Showcase
+**Master Singularity** charges the Master Ball, rapidly cycles the real eligible reward pool, locks onto the server-confirmed winner and gradually reveals it. The October 11 hotfix uses **0.20–0.30-second candidate slots**, a stable larger winner label and synchronized final timing after Pokémon initialization.
 
-<div style="display: flex; overflow-x: auto; gap: 15px; padding: 15px 0; scroll-snap-type: x mandatory; align-items: center; background: rgba(0,0,0,0.2); border-radius: 10px; margin: 1.5rem 0;">
-  <img src="/UniCrates/image.png" alt="UniCrates in World" style="scroll-snap-align: center; max-height: 350px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
-  <img src="/UniCrates/image1.png" alt="UniCrates Holograms" style="scroll-snap-align: center; max-height: 350px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
-  <img src="/UniCrates/image2.png" alt="UniCrates GUI Preview" style="scroll-snap-align: center; max-height: 350px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
-  <img src="/UniCrates/image3.png" alt="UniCrates Opening Animation" style="scroll-snap-align: center; max-height: 350px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
-</div>
+<AnimationPreview id="astral_reveal" />
 
----
+The stored opening ID is `astral_reveal`, and the model ID is `astral_pokeball`. These IDs remain valid for existing configurations. [See the full catalog and setup](./custom-content/animation-catalog).
 
-## Documentation Navigation
+## How the pieces fit together
 
-| Section | Description |
-| :--- | :--- |
-| **[Getting Started](/unicrates/getting-started/)** | Installation instructions for Fabric & NeoForge, first crate setup. |
-| **[Gameplay Guide](/unicrates/gameplay/)** | How players interact with crates, keys, previewing odds, and mass opening. |
-| **[Configuration Overview](/unicrates/configuration/)** | Global settings, Discord webhooks, interactive 3D Poké Balls, and camera splines. |
-| **[How to Create a Crate](/unicrates/custom-content/create)** | Step-by-step tutorial on crafting custom crate definitions. |
-| **[Custom Models & Rendering](/unicrates/custom-content/models)** | Display Entity rendering, 3D rig models, and custom model data. |
-| **[Rewards Guide](/unicrates/custom-content/rewards)** | Weighted odds, Cobblemon Pokémon specs, commands, economy, and limits. |
-| **[Custom Animations](/unicrates/custom-content/animations)** | Timeline-based keyframed animations, orbits, particles, and easing curves. |
-| **[JSON Format Reference](/unicrates/custom-content/json)** | Exhaustive field-by-field schema reference for all configurations. |
-| **[Commands](/unicrates/administration/commands)** | Full command list with syntax, parameters, and permission levels. |
-| **[Permissions](/unicrates/administration/permissions)** | Granular permissions matrix for LuckPerms and vanilla OP levels. |
-| **[Developer Architecture](/unicrates/developer/)** | Modular architecture, event bus hooks, and storage engine design. |
+A **crate definition** controls its key requirements, reward pool and opening settings. A **placed anchor** makes that crate available at a world location. Its **model** determines the physical appearance; its **idle effects** run while it waits; its **opening** determines the reveal sequence. The **reward definition** decides what the player receives. The same model can use different openings, and the same opening can reveal different configured rewards.
+
+Most server customization lives under `config/unicrates/`. Install the matching UniCrates client companion to display its custom models and scenes. Use the [installation guide](./getting-started/) for exact artifacts and optional dependencies.
+
+## Version and documentation scope
+
+This guide describes the **current 2.3 source and shipped data**, including the Master roulette hotfix. It separates implemented behavior from stored settings that currently have no runtime effect. Definitions, commands and examples are checked against the code; it does not claim that every external integration version or shader pack has been tested.
+
+The [2.3 release notes](./release-notes) describe the current feature set and changes. The [developer section](./developer/) covers internal architecture and extension points.
+
+## Purchase and custom animation requests
+
+UniCrates is **$40**, with the price permanently fixed at that amount. Buyers receive **one free custom animation**; additional custom animations cost **$5 each**. You may request the first animation before buying to see its result before deciding. [Join Discord](https://discord.gg/VjU5AybJYr) and DM the author to discuss your request.
+
+[Mod trailer](https://youtu.be/EIxJPLKGiW0) · [Web editor video](https://youtu.be/YmDfbAc74U4) · [Support and request details](./support)

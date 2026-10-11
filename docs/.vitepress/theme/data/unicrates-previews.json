@@ -1,0 +1,474 @@
+[
+  {
+    "id": "astral_reveal",
+    "name": "Master Singularity",
+    "category": "Master Singularity",
+    "recordedOn": "2026-10-11",
+    "gif": "/UniCrates/animations/astral_reveal.gif",
+    "poster": "/UniCrates/animations/astral_reveal.webp"
+  },
+  {
+    "id": "angelic_ascension",
+    "name": "Angelic Ascension",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/angelic_ascension.gif",
+    "poster": "/UniCrates/animations/angelic_ascension.webp"
+  },
+  {
+    "id": "atlantis_abyss",
+    "name": "Atlantis Abyss",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/atlantis_abyss.gif",
+    "poster": "/UniCrates/animations/atlantis_abyss.webp"
+  },
+  {
+    "id": "celestial_convergence",
+    "name": "Celestial Convergence",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/celestial_convergence.gif",
+    "poster": "/UniCrates/animations/celestial_convergence.webp"
+  },
+  {
+    "id": "classic_chest_pop",
+    "name": "Classic Chest Pop",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/classic_chest_pop.gif",
+    "poster": "/UniCrates/animations/classic_chest_pop.webp"
+  },
+  {
+    "id": "demonic_hellfire",
+    "name": "Demonic Hellfire",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/demonic_hellfire.gif",
+    "poster": "/UniCrates/animations/demonic_hellfire.webp"
+  },
+  {
+    "id": "firework_burst",
+    "name": "Firework Burst",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/firework_burst.gif",
+    "poster": "/UniCrates/animations/firework_burst.webp"
+  },
+  {
+    "id": "hologram_spin",
+    "name": "Hologram Spin",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/hologram_spin.gif",
+    "poster": "/UniCrates/animations/hologram_spin.webp"
+  },
+  {
+    "id": "item_display_carousel",
+    "name": "Item Display Carousel",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/item_display_carousel.gif",
+    "poster": "/UniCrates/animations/item_display_carousel.webp"
+  },
+  {
+    "id": "light_beam_pillar",
+    "name": "Light Beam Pillar",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/light_beam_pillar.gif",
+    "poster": "/UniCrates/animations/light_beam_pillar.webp"
+  },
+  {
+    "id": "meteor_shower_reveal",
+    "name": "Meteor Shower Reveal",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/meteor_shower_reveal.gif",
+    "poster": "/UniCrates/animations/meteor_shower_reveal.webp"
+  },
+  {
+    "id": "money_jackpot",
+    "name": "Money Jackpot",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/money_jackpot.gif",
+    "poster": "/UniCrates/animations/money_jackpot.webp"
+  },
+  {
+    "id": "nature_bloom",
+    "name": "Nature Bloom",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/nature_bloom.gif",
+    "poster": "/UniCrates/animations/nature_bloom.webp"
+  },
+  {
+    "id": "orbital_sweep",
+    "name": "Orbital Sweep",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/orbital_sweep.gif",
+    "poster": "/UniCrates/animations/orbital_sweep.webp"
+  },
+  {
+    "id": "particle_vortex",
+    "name": "Particle Vortex",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/particle_vortex.gif",
+    "poster": "/UniCrates/animations/particle_vortex.webp"
+  },
+  {
+    "id": "pokemon_master_capture",
+    "name": "Pokemon Master Capture",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/pokemon_master_capture.gif",
+    "poster": "/UniCrates/animations/pokemon_master_capture.webp"
+  },
+  {
+    "id": "portal_pull",
+    "name": "Portal Pull",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/portal_pull.gif",
+    "poster": "/UniCrates/animations/portal_pull.webp"
+  },
+  {
+    "id": "void_rift_reveal",
+    "name": "Void Rift Reveal",
+    "category": "Effect timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/void_rift_reveal.gif",
+    "poster": "/UniCrates/animations/void_rift_reveal.webp"
+  },
+  {
+    "id": "csgo_roulette_gui",
+    "name": "Csgo Roulette Gui",
+    "category": "GUI roulette",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/csgo_roulette_gui.gif",
+    "poster": "/UniCrates/animations/csgo_roulette_gui.webp"
+  },
+  {
+    "id": "interactive_pokeball",
+    "name": "Interactive Pokeball",
+    "category": "Interactive selection",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/interactive_pokeball.gif",
+    "poster": "/UniCrates/animations/interactive_pokeball.webp"
+  },
+  {
+    "id": "articuno_frost",
+    "name": "Articuno Frost",
+    "category": "Pokémon scenes",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/articuno_frost.gif",
+    "poster": "/UniCrates/animations/articuno_frost.webp"
+  },
+  {
+    "id": "charizard_rift",
+    "name": "Charizard Rift",
+    "category": "Pokémon scenes",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/charizard_rift.gif",
+    "poster": "/UniCrates/animations/charizard_rift.webp"
+  },
+  {
+    "id": "gengar_shadow",
+    "name": "Gengar Shadow",
+    "category": "Pokémon scenes",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/gengar_shadow.gif",
+    "poster": "/UniCrates/animations/gengar_shadow.webp"
+  },
+  {
+    "id": "pikachu_electric",
+    "name": "Pikachu Electric",
+    "category": "Pokémon scenes",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/pikachu_electric.gif",
+    "poster": "/UniCrates/animations/pikachu_electric.webp"
+  },
+  {
+    "id": "abyssal_prismarine_timeline",
+    "name": "Abyssal Prismarine Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/abyssal_prismarine_timeline.gif",
+    "poster": "/UniCrates/animations/abyssal_prismarine_timeline.webp"
+  },
+  {
+    "id": "amethyst_geode_timeline",
+    "name": "Amethyst Geode Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/amethyst_geode_timeline.gif",
+    "poster": "/UniCrates/animations/amethyst_geode_timeline.webp"
+  },
+  {
+    "id": "angelic_timeline",
+    "name": "Angelic Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/angelic_timeline.gif",
+    "poster": "/UniCrates/animations/angelic_timeline.webp"
+  },
+  {
+    "id": "atlantis_timeline",
+    "name": "Atlantis Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/atlantis_timeline.gif",
+    "poster": "/UniCrates/animations/atlantis_timeline.webp"
+  },
+  {
+    "id": "aztec_jaguar_timeline",
+    "name": "Aztec Jaguar Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/aztec_jaguar_timeline.gif",
+    "poster": "/UniCrates/animations/aztec_jaguar_timeline.webp"
+  },
+  {
+    "id": "celestial_astral_timeline",
+    "name": "Celestial Astral Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/celestial_astral_timeline.gif",
+    "poster": "/UniCrates/animations/celestial_astral_timeline.webp"
+  },
+  {
+    "id": "common_timeline",
+    "name": "Common Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/common_timeline.gif",
+    "poster": "/UniCrates/animations/common_timeline.webp"
+  },
+  {
+    "id": "common_wooden_timeline",
+    "name": "Common Wooden Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/common_wooden_timeline.gif",
+    "poster": "/UniCrates/animations/common_wooden_timeline.webp"
+  },
+  {
+    "id": "demonic_timeline",
+    "name": "Demonic Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/demonic_timeline.gif",
+    "poster": "/UniCrates/animations/demonic_timeline.webp"
+  },
+  {
+    "id": "ender_voidborn_timeline",
+    "name": "Ender Voidborn Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/ender_voidborn_timeline.gif",
+    "poster": "/UniCrates/animations/ender_voidborn_timeline.webp"
+  },
+  {
+    "id": "epic_obsidian_timeline",
+    "name": "Epic Obsidian Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/epic_obsidian_timeline.gif",
+    "poster": "/UniCrates/animations/epic_obsidian_timeline.webp"
+  },
+  {
+    "id": "epic_timeline",
+    "name": "Epic Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/epic_timeline.gif",
+    "poster": "/UniCrates/animations/epic_timeline.webp"
+  },
+  {
+    "id": "frostmourne_glacial_timeline",
+    "name": "Frostmourne Glacial Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/frostmourne_glacial_timeline.gif",
+    "poster": "/UniCrates/animations/frostmourne_glacial_timeline.webp"
+  },
+  {
+    "id": "kraken_galleon_timeline",
+    "name": "Kraken Galleon Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/kraken_galleon_timeline.gif",
+    "poster": "/UniCrates/animations/kraken_galleon_timeline.webp"
+  },
+  {
+    "id": "legendary_gold_timeline",
+    "name": "Legendary Gold Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/legendary_gold_timeline.gif",
+    "poster": "/UniCrates/animations/legendary_gold_timeline.webp"
+  },
+  {
+    "id": "legendary_timeline",
+    "name": "Legendary Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/legendary_timeline.gif",
+    "poster": "/UniCrates/animations/legendary_timeline.webp"
+  },
+  {
+    "id": "mecha_dragon_timeline",
+    "name": "Mecha Dragon Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/mecha_dragon_timeline.gif",
+    "poster": "/UniCrates/animations/mecha_dragon_timeline.webp"
+  },
+  {
+    "id": "money_timeline",
+    "name": "Money Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/money_timeline.gif",
+    "poster": "/UniCrates/animations/money_timeline.webp"
+  },
+  {
+    "id": "nature_timeline",
+    "name": "Nature Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/nature_timeline.gif",
+    "poster": "/UniCrates/animations/nature_timeline.webp"
+  },
+  {
+    "id": "pharaoh_tomb_timeline",
+    "name": "Pharaoh Tomb Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/pharaoh_tomb_timeline.gif",
+    "poster": "/UniCrates/animations/pharaoh_tomb_timeline.webp"
+  },
+  {
+    "id": "pokeball_interactive_timeline",
+    "name": "Pokeball Interactive Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/pokeball_interactive_timeline.gif",
+    "poster": "/UniCrates/animations/pokeball_interactive_timeline.webp"
+  },
+  {
+    "id": "pokemon_timeline",
+    "name": "Pokemon Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/pokemon_timeline.gif",
+    "poster": "/UniCrates/animations/pokemon_timeline.webp"
+  },
+  {
+    "id": "prismatic_fairy_timeline",
+    "name": "Prismatic Fairy Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/prismatic_fairy_timeline.gif",
+    "poster": "/UniCrates/animations/prismatic_fairy_timeline.webp"
+  },
+  {
+    "id": "radioactive_biohazard_timeline",
+    "name": "Radioactive Biohazard Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/radioactive_biohazard_timeline.gif",
+    "poster": "/UniCrates/animations/radioactive_biohazard_timeline.webp"
+  },
+  {
+    "id": "rare_iron_timeline",
+    "name": "Rare Iron Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/rare_iron_timeline.gif",
+    "poster": "/UniCrates/animations/rare_iron_timeline.webp"
+  },
+  {
+    "id": "rare_timeline",
+    "name": "Rare Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/rare_timeline.gif",
+    "poster": "/UniCrates/animations/rare_timeline.webp"
+  },
+  {
+    "id": "retro_arcade_timeline",
+    "name": "Retro Arcade Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/retro_arcade_timeline.gif",
+    "poster": "/UniCrates/animations/retro_arcade_timeline.webp"
+  },
+  {
+    "id": "samurai_shinto_timeline",
+    "name": "Samurai Shinto Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/samurai_shinto_timeline.gif",
+    "poster": "/UniCrates/animations/samurai_shinto_timeline.webp"
+  },
+  {
+    "id": "sculk_warden_timeline",
+    "name": "Sculk Warden Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/sculk_warden_timeline.gif",
+    "poster": "/UniCrates/animations/sculk_warden_timeline.webp"
+  },
+  {
+    "id": "solar_flare_timeline",
+    "name": "Solar Flare Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/solar_flare_timeline.gif",
+    "poster": "/UniCrates/animations/solar_flare_timeline.webp"
+  },
+  {
+    "id": "steampunk_chronos_timeline",
+    "name": "Steampunk Chronos Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/steampunk_chronos_timeline.gif",
+    "poster": "/UniCrates/animations/steampunk_chronos_timeline.webp"
+  },
+  {
+    "id": "tactical_airdrop_timeline",
+    "name": "Tactical Airdrop Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/tactical_airdrop_timeline.gif",
+    "poster": "/UniCrates/animations/tactical_airdrop_timeline.webp"
+  },
+  {
+    "id": "vampiric_blood_timeline",
+    "name": "Vampiric Blood Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/vampiric_blood_timeline.gif",
+    "poster": "/UniCrates/animations/vampiric_blood_timeline.webp"
+  },
+  {
+    "id": "witchcraft_cauldron_timeline",
+    "name": "Witchcraft Cauldron Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/witchcraft_cauldron_timeline.gif",
+    "poster": "/UniCrates/animations/witchcraft_cauldron_timeline.webp"
+  },
+  {
+    "id": "wyrm_hoard_timeline",
+    "name": "Wyrm Hoard Timeline",
+    "category": "Themed timelines",
+    "recordedOn": "2026-10-10",
+    "gif": "/UniCrates/animations/wyrm_hoard_timeline.gif",
+    "poster": "/UniCrates/animations/wyrm_hoard_timeline.webp"
+  }
+]
