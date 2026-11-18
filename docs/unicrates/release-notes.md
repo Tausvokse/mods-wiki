@@ -1,3 +1,13 @@
+# Release notes
+
+## 3.0.0 — Lite and separately activated Pro
+
+Four Lite distributions cover Fabric/NeoForge in server+client and server-only modes. Lite has four tier families and JSON configuration. Pro has separate server/client companions or server-only builds and requires registered online activation. See [editions](./editions) and the [current installation guide](./getting-started/).
+
+Lite defaults permit ordinary-player preview/opening. A one-time per-player chat notice links to the separate paid edition. Server-only requires the hosted pack. Older server configuration is preserved.
+
+The following notes describe the historical engine and are not the Lite feature list.
+
 # UniCrates 2.3 release notes
 
 ## Current documentation edition

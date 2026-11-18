@@ -1,25 +1,15 @@
-# Support and custom animation requests
+# Support and purchases
 
-## Purchase UniCrates
+Lite is free. UniCrates Pro 3.x costs US$40 once for one active server and updates within 3.x. New purchases do not include an individual animation service. Previously agreed written purchase terms remain valid.
 
-The mod costs **$40**. Its price is permanently fixed at this amount and reflects the work on the mod, models, animation systems and editor.
+Check [the product page](https://taushop.me/unicrates/) for current checkout availability, terms, privacy and refund information. Do not assume a browser success page or a payment screenshot establishes a completed order.
 
-[Join the Discord community](https://discord.gg/VjU5AybJYr) and send the author a DM to arrange a purchase or ask a setup question. This wiki is publicly readable; the mod files are provided through the purchase channel.
+After checkout, save the private purchase-access file from the product page before closing its tab. You can reopen downloads with that file for 30 days from checkout preparation. Download the license key separately and keep it with your receipt; license keys are not automatically emailed. For later downloads or lost browser access, contact support privately with your Paddle receipt. Do not purchase again to retry a failed download.
 
-- [Watch the mod trailer](https://youtu.be/EIxJPLKGiW0)
-- [Watch the web editor demonstration](https://youtu.be/YmDfbAc74U4)
-- [Browse all ready-to-use opening GIFs](./custom-content/gallery)
+For setup, purchases, failed delivery or host moves, email [tausvokseoff@gmail.com](mailto:tausvokseoff@gmail.com) or [join Discord](https://discord.gg/VjU5AybJYr).
 
-## Request a personal animation
+Include Minecraft/loader versions, the exact UniCrates filename, installation mode, steps to reproduce and the relevant log excerpt. Purchase support also needs the transaction reference. Stop a previous server before requesting an activation move.
 
-Buyers can request **one custom animation free**. Each additional animation costs **$5**. You can request your first animation **before purchasing the mod**, so you can see the result before deciding whether to buy.
+Never post license keys, private download tokens, database passwords, editor session links or private activation identities in public. Read [troubleshooting](./getting-started/troubleshooting) first.
 
-In your DM, include the crate theme, your reference or idea, the model you want to use, and the reveal you have in mind. Mention whether the player should simply watch, select a Poké Ball, or interact in another way. The author can discuss which parts fit the existing timeline system and which require dedicated development. A requested animation does not change the reward pool unless you configure that separately.
-
-You can also create your own JSON timelines. Start with the [custom animation tutorial](./custom-content/animation-tutorial); the [action reference](./custom-content/timeline-reference) explains the available commands and parameters.
-
-## Get useful troubleshooting help
-
-Include your Minecraft and loader versions, UniCrates client/server versions, the opening ID, and what happened compared with what you expected. For a configuration problem, include the relevant crate or animation JSON. For a crash, include the relevant client or server log excerpt.
-
-Remove database passwords, webhook URLs, editor session links/tokens and private server details before sharing files. For many common issues, the [troubleshooting guide](./getting-started/troubleshooting) provides the first checks.
+Custom development, if separately agreed, has its own scope and price. It is not bundled with new Pro licenses. Pro owners can also [author their own timelines](./custom-content/animation-tutorial).
