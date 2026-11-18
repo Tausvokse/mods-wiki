@@ -22,8 +22,12 @@ export default defineConfig({
     ],
     sidebar: {
       '/unicrates/': [
-        { text: 'UniCrates 2.3', items: [
+        { text: 'UniCrates 3.x', items: [
           { text: 'Overview', link: '/unicrates/' },
+          { text: 'Lite & Pro Editions', link: '/unicrates/editions' },
+          { text: 'Lite Opening Gallery', link: '/unicrates/lite-gallery' },
+          { text: 'Lite & Pro Editions', link: '/unicrates/editions' },
+          { text: 'Lite Opening Gallery', link: '/unicrates/lite-gallery' },
           { text: 'Release Notes', link: '/unicrates/release-notes' },
           { text: 'Installation & First Crate', link: '/unicrates/getting-started/' },
           { text: 'Upgrade an Existing Server', link: '/unicrates/getting-started/upgrading' },
